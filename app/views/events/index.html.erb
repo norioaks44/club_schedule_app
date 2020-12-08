@@ -1,0 +1,26 @@
+<%# <%= render "shared/header" %> %>
+<div class="calendar-part">
+
+  <div class="new-day">
+    <%= link_to '活動日を登録する', new_event_path, class: "day-regist"%>
+  </div>
+<%# <% if @event == nil%> %>
+  <%= month_calendar events: @events do |date, events| %>
+    <%= date.day %>
+
+    <% events.each do |event| %>
+      <%= link_to event_path(event.id) do %>
+        <div class="day_title_name">
+          <%= event.title.name %>
+        </div>
+        <div class="day_meeting_time">
+          <% if event.meeting_time.id != 2 %>
+            <%= event.meeting_time.name %>〜
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+
+  <% end %>
+<%# <% end %> %>
+</div>
