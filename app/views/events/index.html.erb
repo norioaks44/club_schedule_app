@@ -4,7 +4,7 @@
   <div class="new-day">
     <%= link_to '活動日を登録する', new_event_path, class: "day-regist"%>
   </div>
-<%# <% if @event == nil%> %>
+
   <%= month_calendar events: @events do |date, events| %>
     <%= date.day %>
 
@@ -22,5 +22,5 @@
     <% end %>
 
   <% end %>
-<%# <% end %> %>
+
 </div>
