@@ -1,10 +1,12 @@
 <%# <%= render "shared/header" %> %>
-<div class="calendar-part">
 
+<div class="page_title">
+SIT Rugby Football club
+</div>
   <div class="new-day">
     <%= link_to '活動日を登録する', new_event_path, class: "day-regist"%>
   </div>
-
+<div class="calendar-part">
   <%= month_calendar events: @events do |date, events| %>
     <%= date.day %>
 
