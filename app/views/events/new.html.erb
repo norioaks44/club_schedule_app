@@ -1,0 +1,38 @@
+<h1>活動日登録</h1>
+
+<%= form_with model: @event, local: true do |f| %>
+
+  <%= render 'shared/error_messages', model: f.object %> 
+
+    <div class="title">
+    <span>タイトル</span>
+      <%= f.collection_select(:title_id, Title.all, :id, :name, {}, {class:"select-box"}) %>
+    </div>
+
+    <div class="start-time">
+    <span>日付</span>
+      <%= f.date_select :start_time %>
+    </div>
+
+    <div class="meeting-time">
+    <span class="meeting-time-text">集合時間</span>
+      <%= f.collection_select(:meeting_time_id, MeetingTime.all, :id, :name, {}, {class:"select-box"}) %>
+    </div>
+
+    <div class="info">
+      <div>
+        <span class="info-title">詳細情報</span>
+      </div>
+      <%= f.text_area :info ,class: 'day-info', placeholder:"練習内容の説明や活動場所など", rows:'7'%>
+    </div>
+    
+    
+    <div class="send">
+      <%= form_with(model: @event, local: true) do |form|%>
+        <%= form.submit "登録する" ,class:"sell-btn" %>
+      <% end %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+
+
+<% end %>
