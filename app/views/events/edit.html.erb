@@ -1,6 +1,6 @@
 <div class="event-day">
 
-  <h2 class="event-day-title">活動日登録</h2>
+  <h2 class="event-day-title">活動日編集</h2>
 
   <div class="event-day-main">
       <%= form_with model: @event, local: true do |f| %>
@@ -44,7 +44,7 @@
           
           <div class="link-btn-contents">
             <div class="send-link">
-              <%= f.submit "登録する" ,class:"new-btn" %>
+              <%= f.submit "編集する" ,class:"new-btn" %>
             </div>
             <div class="back-link">
               <%=link_to 'もどる', root_path, class:"back-btn" %>
