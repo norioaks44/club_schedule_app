@@ -1,28 +1,53 @@
 <%# <%= render "shared/header" %>
 
-<div class="page-title">
-SIT Rugby Football club
-</div>
-  <div class="new-day">
-    <%= link_to '活動日を登録する', new_event_path, class: "day-regist"%>
+  <h1 class="page-title">SIT R.F.C Shcedule</h1>
+<div class="event-main">
+
+  <div class="left-side">
+      <div class="new-day">
+        <%= link_to '新規登録', new_event_path, class: "new-day-btn"%>
+      </div>
+      <div class="match-review">
+        <a class="match-review-btn" href="#">
+        試合のレビュー
+        </a>
+      </div>
+      <div class="weight-trainning">
+        <a class="weight-trainning-btn" href="#">
+        筋トレ測定
+        </a>
+      </div>
+      <div class="strategy-dictionary">
+        <a class="strategy-dictionary-btn" href="#">
+        技術・戦術・ドリル
+        </a>
+      </div>
   </div>
-<div class="calendar-part">
-  <%= month_calendar events: @events do |date, events| %>
-    <%= date.day %>
 
-    <% events.each do |event| %>
-      <%= link_to event_path(event.id) do %>
-        <div class="day_title_name">
-          <%= event.title.name %>
-        </div>
-        <div class="day_meeting_time">
-          <% if event.meeting_time.id != 2 %>
-            <%= event.meeting_time.name %>〜
+  <div class="main-calendar">
+    <div class="calendar-part">
+      <%= month_calendar events: @events do |date, events| %>
+        <%= date.day %>
+
+        <% events.each do |event| %>
+          <%= link_to event_path(event.id) do %>
+            <div class="day_title_name">
+              <%= event.title.name %>
+            </div>
+            <div class="day_meeting_time">
+              <% if event.meeting_time.id != 2 %>
+                <%= event.meeting_time.name %>〜
+              <% end %>
+            </div>
           <% end %>
-        </div>
-      <% end %>
-    <% end %>
+        <% end %>
 
-  <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="right-side">
+    今月のスローガン！
+  </div>
 
 </div>

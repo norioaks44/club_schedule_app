@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 100vh;
+  height: 650px;
   min-width: 500px;
   padding: 5vh 5vw;
 }
@@ -97,7 +97,7 @@
   margin: 20px;
 }
 
-.new-btn {
+.create-btn {
   height: 40px;
   width: 100px;
 }

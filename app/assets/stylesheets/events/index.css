@@ -1,10 +1,87 @@
-
 a {
   text-decoration: none;
 }
+
+.page-title {
+  font: 32px bold;
+}
+
+.event-main {
+  height: 600px;
+  margin: 40px 0;
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.left-side {
+  background-color: #ffb3b3;
+  width: 180px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+/* .new-day { */
+  /* display: flex; */
+  /* justify-content: center; */
+  /* }  */
+  
+  .new-day-btn {
+  background-color: #97d6fa;
+  height: 20px;
+  width: 60px;
+  border-radius: 100vh;
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.match-review {
+  background-color: #97d6fa;
+  height: 20px;
+  width: 60px;
+  border-radius: 100vh;
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.weight-trainning {
+  background-color: #97d6fa;
+  height: 20px;
+  width: 60px;
+  border-radius: 100vh;
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.strategy-dictionary {
+  background-color: #97d6fa;
+  height: 20px;
+  width: 60px;
+  border-radius: 100vh;
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.main-calendar {
+  width: 60vw;
+  max-width: 1000px;
+}
+
+.right-side {
+  background-color: #9afa97;
+  width: 10%;
+}
+
 .day_title_name {
   text-align: center;
 }
 .day_meeting_time {
   text-align: right;
+  font-size: 14px;
 }
