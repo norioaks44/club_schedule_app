@@ -1,7 +1,8 @@
 class EventsController < ApplicationController
 
   def index
-    @events = Event.all
+    query = "SELECT * FROM events ORDER BY id DESC"
+    @events = Event.find_by_sql(query)
   end
 
   def new
@@ -27,6 +28,7 @@ class EventsController < ApplicationController
   
   def update
     @event = Event.find(params[:id])
+    binding.pry
     if @event.update(event_params)
       redirect_to event_path
     else

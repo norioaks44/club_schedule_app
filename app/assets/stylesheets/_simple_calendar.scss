@@ -1,6 +1,7 @@
-.simple-calendar {
+.simple-calendar {background-color: #ffffff;
   .day {
-    font-size: 18px;
+    font-size: 16px;
+    background-color: #ffffff;
   }
 
   .wday-0 {
@@ -15,14 +16,17 @@
     background-color: #6accfa;
   }
 
-  .today {}
+  .today {background-color: rgba(255, 255, 0, 0.5);}
   .past {}
   .future {}
 
   .start-date {}
 
-  .prev-month {}
-  .next-month { }
+  .prev-month {
+    background-color: rgb(155, 155, 155);
+  }
+  .next-month {
+    background-color: rgb(155, 155, 155);}
   .current-month {}
 
   .has-events {}
