@@ -25,7 +25,8 @@ self.data = [
   { id: 23, name: '23'},
   { id: 24, name: '22'},
   { id: 25, name: '21'},
-  { id: 26, name: '20'}
+  { id: 26, name: '20'},
+  { id: 27, name: '外部'},
 ]
 include ActiveHash::Associations
 has_many :users
