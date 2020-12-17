@@ -1,0 +1,12 @@
+.top-page-header {
+  background-color: #f7f7f7;
+  width: 100vw;
+  padding: 2vh 150px;
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+.page-title {
+  color: black;
+  font: 32px bold;
+}
