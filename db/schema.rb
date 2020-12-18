@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2020_12_17_150519) do
     t.string "drill_name", null: false
     t.text "info", null: false
     t.integer "category_id", null: false
+    t.integer "genre_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

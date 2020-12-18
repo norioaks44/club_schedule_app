@@ -1,0 +1,10 @@
+<% @skills.each do |skill| %>
+  <li class='list'>
+    <%= link_to skill_path(skill.id), method: :get do %>
+      <%= skill.drill_name %>
+    <% end %>
+  </li>
+<% end %>
+
+<%= link_to '登録する', new_skill_path %>
+<%= link_to 'もどる', root_path%>

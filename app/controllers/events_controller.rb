@@ -28,7 +28,6 @@ class EventsController < ApplicationController
   
   def update
     @event = Event.find(params[:id])
-    binding.pry
     if @event.update(event_params)
       redirect_to event_path
     else

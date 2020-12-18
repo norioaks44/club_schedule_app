@@ -4,6 +4,7 @@ class CreateSkills < ActiveRecord::Migration[6.0]
       t.string :drill_name,    null: false
       t.text :info,            null: false
       t.integer :category_id,  null: false
+      t.integer :genre_id,     null: false
       t.timestamps
     end
   end
