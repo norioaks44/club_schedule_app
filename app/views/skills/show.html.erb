@@ -1,0 +1,20 @@
+  <p><%= @skill.drill_name %></p> <br>
+  <p><%= @skill.info %></p>
+  <p>対象：<%= @skill.genre.name %></p>
+  <p>対象：<%= @skill.category.name %></p>
+
+<% if @skill.image.attached? %>
+  <img src="<%= rails_blob_path(@skill.image) %>">
+<% end %>
+
+<% if @skill.video.attached? %>
+  <%= video_tag rails_blob_path(@skill.video, disposition: "attachment"),class: "video-size", controls: :true %>
+<% end %>
+
+  <div>
+    <%= link_to '編集', edit_skill_path(@skill.id), class:"skill-edit-btn" %>
+    <%= link_to '削除する', skill_path(@skill.id), method: :delete, class: "skill-destroy" %>
+  </div>
+  <div>
+    <%=link_to 'もどる', skills_path, class:"back-btn" %>
+  </div>
