@@ -46,7 +46,7 @@ Things you may want to cover:
 | --------------- | ---------- | ------------------------------ |
 | user            | references | null: false, foreign_key: true |
 | title_id        | integer    | null: false                    |
-| info            | string     | null: false                    |
+| info            | text       | null: false                    |
 | start_time      | date       | null: false                    |
 | meeting_time_id | integer    | null: false                    |
 

@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   root "events#index"
   
   resources :skills
+  resources :reviews
   
 end
