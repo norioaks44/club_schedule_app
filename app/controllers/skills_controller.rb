@@ -49,4 +49,5 @@ class SkillsController < ApplicationController
     params.require(:skill).permit(:drill_name, :info, :category_id, :genre_id, :video, :image)
   end
 
+  
 end
