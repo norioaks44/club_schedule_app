@@ -3,8 +3,7 @@ class ReviewsController < ApplicationController
   def index
     query = "SELECT * FROM events ORDER BY start_time DESC"
     @events = Event.find_by_sql(query)
-    # .order(start_time: :desc).limit(10)
-    # @reviews = Review.all
+    @reviews = Review.order(created_at: :desc).limit(10)
   end
 
   def new
@@ -19,6 +18,10 @@ class ReviewsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @review = Review.find(params[:id])
   end
 
   
