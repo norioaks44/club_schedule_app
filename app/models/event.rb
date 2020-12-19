@@ -3,7 +3,7 @@ class Event < ApplicationRecord
   belongs_to :title
   belongs_to :meeting_time
   
-  has_one :event_match
+  has_one :review
 
   with_options presence: true do
     validates :title_id, numericality: { other_than: 1, message: 'Select' }

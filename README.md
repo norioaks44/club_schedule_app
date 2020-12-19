@@ -72,11 +72,11 @@ Things you may want to cover:
 
 | Column          | Type       | Options                        |
 | --------------- | ---------- | ------------------------------ |
-| user            | references | null: false, foreign_key: true |
-| event           | references | null: false, foreign_key: true |
+| event_match     | references | null: false, foreign_key: true |
+| match_genre_id  | integer    | null:false                     |
 | comment         | text       | null:false                     |
 | match_url       | text       |                                |
 
 ### Association
-- belongs_to :user
 - belongs_to :event
+- belongs_to :user

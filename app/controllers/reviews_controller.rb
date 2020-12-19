@@ -2,10 +2,9 @@ class ReviewsController < ApplicationController
 
   def index
     query = "SELECT * FROM events ORDER BY start_time DESC"
-    @events = Event
-    .find_by_sql(query)
+    @events = Event.find_by_sql(query)
     # .order(start_time: :desc).limit(10)
-    @reviews = Review.all
+    # @reviews = Review.all
   end
 
   def new
@@ -14,28 +13,15 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-    if @review.save
+    if @review.valid?
+      @review.save
       redirect_to reviews_path
     else
       render :new
     end
   end
 
-  def show
-    
-  end
-
-  def edit
-    
-  end
-
-  def update
-    
-  end
-
-  def destroy
-    
-  end
+  
 
   private
   def review_params

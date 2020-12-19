@@ -10,6 +10,11 @@
   <div class='page-form'>
 
     <div class='page-field'>
+      <%= f.label :match_genre_id, "試合ジャンル"%>
+      <%= f.collection_select(:match_genre_id, MatchGenre.all, :id, :name, {}, {class:"select-box", id:"event-title"}) %>
+    </div>
+
+    <div class='page-field'>
       <%= f.label :opponent_team, "対戦相手"%>
       <%= f.text_field :opponent_team, class:"input-form" %>
     </div>
@@ -17,12 +22,12 @@
 
     <div class='page-field'>
       <%= f.label :comment, "レビュー本文"%>
-      <%= f.text_area :comment, class:"input-form" %>
+      <%= f.text_area :comment, class:"input-form", placeholder:" 総括", rows:'4'%>
     </div>
 
     <div class='page-field'>
       <%= f.label :match_url, "試合動画URL(You tubeなど)"%>
-      <%= f.text_area :match_url, class:"input-form" %>
+      <%= f.text_area :match_url, class:"input-form", placeholder:" https://www.youtube.com/watch?v=○○○○○○" %>
     </div>
 
   </div>
