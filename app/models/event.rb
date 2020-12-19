@@ -9,4 +9,6 @@ class Event < ApplicationRecord
     validates :meeting_time_id, numericality: { other_than: 1, message: 'Select' }
   end
   
+  has_one :event
+
 end

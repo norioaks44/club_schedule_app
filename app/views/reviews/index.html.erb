@@ -1,0 +1,24 @@
+<div>
+  <% @events.each do |event| %>
+
+
+  <% if event.title_id == 4 || event.title_id == 5 %>
+    
+    <% if @review_id != nil %>
+      <%= @review.opponent_team%>
+      
+    <% else %>
+
+      <%= link_to new_event_review_path(event.id) ,method: :get do%>
+      <%= event.start_time %>
+      <% end %>
+
+    <% end %>
+
+  <% end %>
+
+  <% end %>
+</div>
+
+<%# <%= link_to '登録する', new_review_path %> 
+<%= link_to 'もどる', root_path%>

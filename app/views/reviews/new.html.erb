@@ -1,0 +1,37 @@
+
+
+<%= form_with model: @review, url: event_reviews_path, class:'form-wrap', local: true do |f| %>
+
+  <%= render 'shared/error_messages', model: f.object %> 
+
+<h1 class="reveiw-title">新規レビュー登録</h1>
+
+
+  <div class='page-form'>
+
+    <div class='page-field'>
+      <%= f.label :opponent_team, "対戦相手"%>
+      <%= f.text_field :opponent_team, class:"input-form" %>
+    </div>
+
+
+    <div class='page-field'>
+      <%= f.label :comment, "レビュー本文"%>
+      <%= f.text_area :comment, class:"input-form" %>
+    </div>
+
+    <div class='page-field'>
+      <%= f.label :match_url, "試合動画URL(You tubeなど)"%>
+      <%= f.text_area :match_url, class:"input-form" %>
+    </div>
+
+  </div>
+
+  <div class="submit-post">
+    <%= f.submit '登録' ,class:"submit-btn" %>
+  </div>
+  <div>
+    <%=link_to 'もどる', reviews_path, class:"back-btn" %>
+  </div>
+
+<% end %>

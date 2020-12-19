@@ -8,7 +8,7 @@
       </div>
       <div class="match-review">
         <a class="match-review-btn" href="#">
-        試合のレビュー
+        <%= link_to '試合レビュー', reviews_path%>
         </a>
       </div>
       <div class="weight-trainning">
@@ -17,8 +17,8 @@
         </a>
       </div>
       <div class="strategy-dictionary">
-        <%# <%= link_to '戦術・技術', skills_path, class: "new-day-btn"%>
         <%= link_to 'スキル', skills_path%>
+        <%# class: "new-day-btn"%>
       </div>
   </div>
 

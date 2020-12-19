@@ -22,11 +22,20 @@
     <%# 空白の場合 %>
 
     <% else %>
+    <%# OFFの場合 %>
     <div class="weight-bold-text">
       OFF！！<br>
       しっかり休みましょう！
     </div>
+    <%# OFFの場合 %>
     <% end %>
+
+    <% if @event.title_id == 4 || 5 %>
+      
+      <%= link_to '試合レビューへ', new_event_review_path(@event.id) %>
+    <% end %>
+
+
 
 
 

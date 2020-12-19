@@ -7,5 +7,6 @@ class User < ApplicationRecord
 extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :grade
   belongs_to :position
-  
+  has_many :reviews
+
 end

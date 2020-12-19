@@ -1,10 +1,11 @@
 class ReviewsController < ApplicationController
 
   def index
-    # query = "SELECT * FROM reviews ORDER BY id DESC"
-    # @reviews = Review.find_by_sql(query)
-    @reviews = Review.order(created_at: :desc).limit(10)
-    @event = Event.find(params[:id])
+    query = "SELECT * FROM events ORDER BY start_time DESC"
+    @events = Event
+    .find_by_sql(query)
+    # .order(start_time: :desc).limit(10)
+    @reviews = Review.all
   end
 
   def new
@@ -38,6 +39,6 @@ class ReviewsController < ApplicationController
 
   private
   def review_params
-    params.require(:review).permit(:comment, :match_url).merge(user_id: current_user.id, event_id: params[:event_id])
+    params.require(:review).permit(:opponent_team, :comment, :match_url).merge(user_id: current_user.id, event_id: params[:event_id])
   end
 end
