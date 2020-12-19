@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  # before_action :no_match_block
+  before_action :no_match_block, only: :new
   
   def index
     @reviews = Review.order(created_at: :desc).limit(10)
@@ -7,8 +7,9 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
+    @event = Event.find(params[:event_id])
   end
-
+  
   def create
     @review = Review.new(review_params)
     if @review.valid?
@@ -58,4 +59,13 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
   end
 
+  def no_match_block
+    @event = Event.find(params[:event_id])
+    if @event.title_id == 4 
+    elsif @event.title_id == 5
+    else
+      redirect_to root_path
+    end
+
+  end
 end
