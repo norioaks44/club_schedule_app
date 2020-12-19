@@ -3,10 +3,14 @@
 <%= @review.match_genre.name %>
 <%= @review.opponent_team %>
 <%= @review.comment %>
-<%= link_to  @review.match_url %>
 
+<% if @review.match_url != "" %>
+  <%= link_to  '外部リンク', @review.match_url %>
+<% end %>
 
 </div>
-
-
+  <div>
+    <%= link_to '編集', edit_review_path, class: "event-edit-btn" %>
+    <%= link_to '削除', review_path(@review.id), method: :delete, class: "event-destroy-btn" %>
+  </div>
 <%= link_to 'もどる', reviews_path%>
