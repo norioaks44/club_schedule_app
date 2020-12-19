@@ -39,6 +39,6 @@ class ReviewsController < ApplicationController
 
   private
   def review_params
-    params.require(:review).permit(:opponent_team, :comment, :match_url).merge(user_id: current_user.id, event_id: params[:event_id])
+    params.require(:review).permit(:match_genre_id, :opponent_team, :comment, :match_url).merge(user_id: current_user.id, event_id: params[:event_id])
   end
 end
