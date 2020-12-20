@@ -1,0 +1,17 @@
+<div class="review-body">
+
+<div class="review-side">
+  <%= link_to 'もどる', root_path, class:"back-btn"%>
+</div>
+
+<div class="review-main">
+  <% @reviews.each do |review| %>
+    <li class="list">
+      <%= link_to review_path(review.id) ,method: :get do%>
+      <%= review.match_genre.name %>  vs<%= review.opponent_team%>
+      <% end %>
+    </li>
+  <% end %>
+</div>
+</div>
+

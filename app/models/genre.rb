@@ -8,7 +8,9 @@ self.data = [
   { id: 6, name: 'ラック'},
   { id: 7, name: 'セットプレー'},
   { id: 8, name: '戦術'},
-  { id: 9, name: '小技'}
+  { id: 9, name: 'アタック'},
+  { id: 10, name: 'ディフェンス'},
+  { id: 11, name: '小技'}
 ]
 include ActiveHash::Associations
 has_many :skills

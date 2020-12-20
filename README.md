@@ -29,26 +29,54 @@ Things you may want to cover:
 
 | Column              | Type    | Options     |
 | ------------------- | ------- | ----------- |
-| nickname            | string  | null: false |
+| name                | string  | null: false |
 | email               | string  | null: false |
 | password_encrypted  | string  | null: false |
-| class_year          | integer | null: false |
+| grade_id            | integer | null: false |
+| position_id         | integer | null: false |
 
 ### Association
 - has_many :events
-- has_many :comments
+- has_many :skills
+- has_many :reviews
 
 ## events テーブル
 
 | Column          | Type       | Options                        |
 | --------------- | ---------- | ------------------------------ |
 | user            | references | null: false, foreign_key: true |
-| comment         | references | null: false, foreign_key: true |
 | title_id        | integer    | null: false                    |
-| info            | string     | null: false                    |
+| info            | text       | null: false                    |
 | start_time      | date       | null: false                    |
 | meeting_time_id | integer    | null: false                    |
 
 ### Association
+
 - belongs_to :user
-- has_many :comments
+- has_one :review
+
+## skills テーブル
+
+| Column          | Type       | Options                        |
+| --------------- | ---------- | ------------------------------ |
+| user            | references | null: false, foreign_key: true |
+| drill_name      | string     | null:false                     |
+| info            | string     | null:false                     |
+| category_id     | integer    | null:false                     |
+| genre_id        | integer    | null:false                     |
+
+### Association
+- belongs_to :user
+
+## reviews テーブル
+
+| Column          | Type       | Options                        |
+| --------------- | ---------- | ------------------------------ |
+| event_match     | references | null: false, foreign_key: true |
+| match_genre_id  | integer    | null:false                     |
+| comment         | text       | null:false                     |
+| match_url       | text       |                                |
+
+### Association
+- belongs_to :event
+- belongs_to :user

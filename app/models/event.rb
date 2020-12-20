@@ -2,6 +2,8 @@ class Event < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :title
   belongs_to :meeting_time
+  
+  has_one :review
 
   with_options presence: true do
     validates :title_id, numericality: { other_than: 1, message: 'Select' }
@@ -9,4 +11,5 @@ class Event < ApplicationRecord
     validates :meeting_time_id, numericality: { other_than: 1, message: 'Select' }
   end
   
+
 end
