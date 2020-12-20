@@ -1,0 +1,27 @@
+.review-body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+
+.review-side {
+  width: 10vw;
+  background-color: antiquewhite;
+  padding: 50px;
+}
+
+.review-main {
+  width: 70vw;
+  height: 500px;
+  background-color: #97d6fa;
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.list {
+  /* height: ; */
+  margin: 10px;
+  list-style: none;
+  display: inline;
+}

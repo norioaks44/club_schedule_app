@@ -10,4 +10,6 @@ class Review < ApplicationRecord
     validates :comment
   end
 
+  validates :event_id, uniqueness: true
+
 end

@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :no_match_block, only: :new
+  before_action :review_double_block, only: :new
   
   def index
     @reviews = Review.order(created_at: :desc).limit(10)
@@ -66,6 +67,11 @@ class ReviewsController < ApplicationController
     else
       redirect_to root_path
     end
+  end
 
+  def review_double_block
+    if @event.review != nil
+      redirect_to reviews_path
+    end
   end
 end
