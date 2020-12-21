@@ -1,7 +1,8 @@
 class ReviewsController < ApplicationController
-  before_action :no_match_block, only: :new
-  before_action :review_double_block, only: :new
-  
+  before_action :authenticate_user!
+  before_action :no_match_block, only: [:new, :create]
+  before_action :review_double_block, only: [:new, :create]
+
   def index
     @reviews = Review.order(created_at: :desc).limit(10)
   end

@@ -11,10 +11,13 @@
   <%= video_tag rails_blob_path(@skill.video, disposition: "attachment"),class: "video-size", controls: :true %>
 <% end %>
 
-  <div>
-    <%= link_to '編集', edit_skill_path(@skill.id), class:"skill-edit-btn" %>
-    <%= link_to '削除する', skill_path(@skill.id), method: :delete, class: "skill-destroy" %>
-  </div>
+  <% if user_signed_in? %>
+    <div>
+      <%= link_to '編集', edit_skill_path(@skill.id), class:"skill-edit-btn" %>
+      <%= link_to '削除する', skill_path(@skill.id), method: :delete, class: "skill-destroy" %>
+    </div>
+  <% end %>
+  
   <div>
     <%=link_to 'もどる', skills_path, class:"back-btn" %>
   </div>

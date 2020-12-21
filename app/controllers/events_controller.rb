@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :show, :edit, :update, :destroy]
 
   def index
     query = "SELECT * FROM events ORDER BY id DESC"
@@ -11,6 +12,7 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
+    binding.pry
     if @event.save
       redirect_to root_path
     else
@@ -19,15 +21,15 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[:id])
+    load_event
   end
   
   def edit
-    @event = Event.find(params[:id])
+    load_event
   end
   
   def update
-    @event = Event.find(params[:id])
+    load_event
     if @event.update(event_params)
       redirect_to event_path
     else
@@ -36,7 +38,7 @@ class EventsController < ApplicationController
   end
   
   def destroy
-    @event = Event.find(params[:id])
+    load_event
     if @event.destroy
       redirect_to root_path
     else
@@ -47,7 +49,11 @@ class EventsController < ApplicationController
   private
 
   def event_params
-      params.require(:event).permit(:title_id, :start_time, :meeting_time_id, :info)  
+      params.require(:event).permit(:title_id, :start_time, :meeting_time_id, :info).merge(user_id: current_user.id)
   end
-  
+
+  def load_event
+    @event = Event.find(params[:id])
+  end
+
 end
