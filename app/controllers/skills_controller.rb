@@ -1,4 +1,5 @@
 class SkillsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     query = "SELECT * FROM skills ORDER BY id DESC"
@@ -46,7 +47,7 @@ class SkillsController < ApplicationController
 
   private
   def skill_params
-    params.require(:skill).permit(:drill_name, :info, :category_id, :genre_id, :video, :image)
+    params.require(:skill).permit(:drill_name, :info, :category_id, :genre_id, :video, :image).merge(user_id: current_user.id)
   end
 
   
