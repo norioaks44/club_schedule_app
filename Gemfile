@@ -73,3 +73,7 @@ gem 'file_validators'
 
 gem 'omniauth-google-oauth2'
 gem "omniauth-rails_csrf_protection"
+
+group :production do
+  gem 'unicorn', '5.4.1'
+end
