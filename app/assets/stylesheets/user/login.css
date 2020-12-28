@@ -1,0 +1,29 @@
+.login-title {
+  font-size: 32px;
+}
+
+.login-body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.login-main {
+  background-color: #97d6fa;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 400px;
+  width: 50vw;
+  max-width: 550px;
+  padding: 5vh 5vw;
+}
+
+
+
+.login-flash-message {
+  font-size: 20px;
+  text-align: center;
+  color: #be0000;
+}

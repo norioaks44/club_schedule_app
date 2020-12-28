@@ -1,16 +1,22 @@
 <header class="top-page-header">
-  <%= link_to "Club Shcedule", "root_path", class:"page-title"%>
+<h1 class="page-title"><%= image_tag "logo.jpeg", class:"logo-pic" %></h1>
 
-  <div>
-    <ul>
+  <div class="account-status">
       <%if user_signed_in? %>
-        <li><%= link_to current_user.name, "#", class: "user-name" %></li>
-        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %> </li>
+        <div class="account-1st">
+          <%# <%= link_to current_user.name, "#", class: "user-name" %>
+          <%= current_user.name %>
+        </div>
+        <div class="account-2nd">
+          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
+        </div>
       <% else %>
-        <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
-        <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
-        <li><%= link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path, method: :post %></li>
+        <div class="account-1st">
+          <%= link_to 'ログイン', new_user_session_path, class: "login" %>
+        </div>
+        <div class="account-2nd">
+          <%= link_to '新規登録', new_user_registration_path, class: "sign-up" %>
+        </div>
       <% end %>
-    </ul>
   </div>
 </header>
