@@ -2,7 +2,7 @@ class SkillsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @skills = Skill.limit(20).order(" created_at DESC ")
+    @skills = Skill.limit(10).order(" created_at DESC ")
   end
 
   def new
@@ -11,7 +11,6 @@ class SkillsController < ApplicationController
 
   def create
     @skill = Skill.new(skill_params)
-    binding.pry
     if @skill.save
       redirect_to skills_path
     else

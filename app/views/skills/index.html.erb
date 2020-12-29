@@ -3,11 +3,11 @@
 <div class="skills-body">
   <div class="skills-main">
     <div class="new-list">
-    <span class="new-list-title">新着リスト</span>
+    <div class="new-list-title">新着リスト</div>
     <% @skills.each do |skill| %>
       <%# <li class='list'> %>
         <%= link_to skill_path(skill.id), method: :get do %>
-          <ul><%= skill.drill_name %></ul>
+          <span class="skill-item"><%= skill.drill_name %></span>
         <% end %>
       <%# </li> %>
     <% end %>
