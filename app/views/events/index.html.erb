@@ -1,51 +1,47 @@
 <%= render "shared/header" %>
+<div class="event-body">
+  <div class="event-main">
 
-<div class="event-main">
+    <div class="left-side">
+        <div class="new-day">
+          <%= link_to '新規登録', new_event_path, class:"index-btn" %>
+        </div>
+        <div class="match-review">
 
-  <div class="left-side">
-      <div class="new-day">
-        <%= link_to '新規登録', new_event_path, class: "new-day-btn"%>
-      </div>
-      <div class="match-review">
-        <a class="match-review-btn" href="#">
-        <%= link_to '試合レビュー', reviews_path%>
-        </a>
-      </div>
-      <div class="weight-trainning">
-        <a class="weight-trainning-btn" href="#">
-        筋トレ測定
-        </a>
-      </div>
-      <div class="strategy-dictionary">
-        <%= link_to 'スキル', skills_path%>
-        <%# class: "new-day-btn"%>
-      </div>
-  </div>
+          <%= link_to '試合レビュー', reviews_path, class:"index-btn" %>
+        </div>
 
-  <div class="main-calendar">
-    <div class="calendar-part">
-      <%= month_calendar events: @events do |date, events| %>
-        <%= date.day %>
-
-        <% events.each do |event| %>
-          <%= link_to event_path(event.id) do %>
-            <div class="day_title_name">
-              <%= event.title.name %>
-            </div>
-            <div class="day_meeting_time">
-              <% if event.meeting_time.id != 2 %>
-                <%= event.meeting_time.name %>〜
-              <% end %>
-            </div>
-          <% end %>
-        <% end %>
-
-      <% end %>
+        <div class="strategy-dictionary">
+          <%= link_to 'スキル', skills_path, class:"index-btn" %>
+        </div>
     </div>
-  </div>
 
-  <div class="right-side">
-    今月のスローガン！
-  </div>
+    <div class="main-calendar">
+      <span class="calendar-head">
+        <%= link_to 'this month', '/', class: "this-month" %>
+      </span>
+      <div class="calendar-part">
+        <%= month_calendar events: @events do |date, events| %>
+          <%= date.day %>
 
+          <% events.each do |event| %>
+            <%= link_to event_path(event.id) do %>
+              <div class="day_title_name">
+                <%= event.title.name %>
+              </div>
+              <div class="day_meeting_time">
+                <% if event.meeting_time.id != 2 %>
+                  <%= event.meeting_time.name %>〜
+                <% end %>
+              </div>
+            <% end %>
+          <% end %>
+
+        <% end %>
+      </div>
+    </div>
+
+  </div>
 </div>
+
+<%= render "shared/footer" %>

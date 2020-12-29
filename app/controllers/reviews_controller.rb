@@ -4,7 +4,8 @@ class ReviewsController < ApplicationController
   before_action :review_double_block, only: [:new, :create]
 
   def index
-    @reviews = Review.order(created_at: :desc).limit(10)
+    # @reviews = Review.order(created_at: :desc).limit(10)
+    @reviews = Review.includes(:user).order("created_at desc")
   end
 
   def new

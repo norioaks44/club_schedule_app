@@ -12,6 +12,20 @@ class Skill < ApplicationRecord
     validates :category_id, numericality: { other_than: 1 } 
     validates :genre_id, numericality: { other_than: 1 } 
   end
+  
+  validates :image, file_content_type: { allow: [
+    'image/jpeg', 
+    'image/jpg', 
+    'image/png', 
+    'image/bmp', 
+    'image/gif'
+    ]}
+    
+  validates :video, file_content_type: {allow: [
+    'video/mp4',
+    'video/mov',
+    'video/quicktime']}
+
 
 
 end

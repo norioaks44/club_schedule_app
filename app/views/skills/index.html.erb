@@ -1,10 +1,21 @@
-<% @skills.each do |skill| %>
-  <li class='list'>
-    <%= link_to skill_path(skill.id), method: :get do %>
-      <%= skill.drill_name %>
+<%= render "shared/skills-header" %>
+
+<div class="skills-body">
+  <div class="skills-main">
+    <div class="new-list">
+    <div class="new-list-title">新着リスト</div>
+    <% @skills.each do |skill| %>
+      <%# <li class='list'> %>
+        <%= link_to skill_path(skill.id), method: :get do %>
+          <span class="skill-item"><%= skill.drill_name %></span>
+        <% end %>
+      <%# </li> %>
     <% end %>
-  </li>
-<% end %>
+    </div>
+  </div>
 
 <%= link_to '登録する', new_skill_path %>
-<%= link_to 'もどる', root_path%>
+
+</div>
+
+<%= render "shared/footer" %>

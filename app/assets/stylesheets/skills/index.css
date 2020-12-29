@@ -1,0 +1,36 @@
+.skills-body {
+  background-color: #dfdfdf;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 20px;
+}
+
+.skills-main {  
+  background-color: #f7f7f7;
+  padding: 20px;
+  height: 800px;
+  width: 60vh;
+  border: 3px groove ;
+  border-radius: 4px;
+}
+
+.new-list-title {
+  border-bottom: 2px double #747474;
+}
+
+.new-list {
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  background-color: #f7f7f7;
+  border: 3px inset ;
+}
+
+.skill-item {
+  background-color: #ffffff;
+  margin: 10px;
+  border-radius: 4px;
+}
