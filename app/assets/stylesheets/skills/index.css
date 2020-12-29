@@ -1,36 +1,39 @@
 .skills-body {
   background-color: #dfdfdf;
-  height: 100vh;
+  height: calc( 100% - 300px );
   width: 100vw;
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding-top: 20px;
+  padding: 20px 0;
 }
 
 .skills-main {  
   background-color: #f7f7f7;
   padding: 20px;
   height: 800px;
-  width: 60vh;
+  width: 60vw;
   border: 3px groove ;
   border-radius: 4px;
+}
+
+.new-list {
+  height: 60%;
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  background-color: #dfdfdf;
+  border: 3px inset ;
 }
 
 .new-list-title {
   border-bottom: 2px double #747474;
 }
 
-.new-list {
-  display: flex;
-  align-content: center;
-  flex-direction: column;
-  background-color: #f7f7f7;
-  border: 3px inset ;
-}
-
 .skill-item {
-  background-color: #ffffff;
-  margin: 10px;
+  background-color: #f7f7f7;
+  font-size: 15px;
+  margin: 5px;
+  padding: 5px 10px;
   border-radius: 4px;
 }

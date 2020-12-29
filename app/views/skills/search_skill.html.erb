@@ -1,0 +1,25 @@
+<%= render "shared/skills-second-header"%>
+
+<div class="skills-body">
+
+  <div class="skills-main">
+    
+      <% if @results.length != 0 %>
+        <% @results.each do |skill| %>
+          <li>
+            <% if skill %>
+              <%= link_to skill_path(skill.id) do %>
+                <span class="skill-item"><%= skill.drill_name %></span>
+              <% end %>
+            <% end %>
+          </li>
+        <% end %>
+      <% else %>
+      該当する項目がありません
+      <%= link_to "もどる", skills_path %>
+      <% end %>
+
+  </div>
+</div>
+
+<%= render "shared/footer" %>
