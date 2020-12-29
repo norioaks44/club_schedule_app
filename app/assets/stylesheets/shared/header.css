@@ -1,6 +1,7 @@
 .top-page-header {
   background-color: #00255e;
   height: 150px;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;

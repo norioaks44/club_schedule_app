@@ -26,6 +26,4 @@ class Skill < ApplicationRecord
     'video/mov',
     'video/quicktime']}
 
-
-
 end
