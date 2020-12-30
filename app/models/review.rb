@@ -8,6 +8,7 @@ class Review < ApplicationRecord
     validates :match_genre_id, numericality: { other_than: 1, message: "can't be blank" }
     validates :opponent_team
     validates :comment
+    validates :match_date
   end
 
   validates :event_id, uniqueness: true

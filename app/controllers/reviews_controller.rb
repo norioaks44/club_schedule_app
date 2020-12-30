@@ -5,8 +5,8 @@ class ReviewsController < ApplicationController
   before_action :searching_reviews, only: [:index, :search_review]
 
   def index
-    @news = Review.order(created_at: :desc).limit(10)
-    @reviews = Review.includes(:user).order("created_at desc")
+    @news = Review.order(match_date: :desc).limit(10)
+    @reviews = Review.includes(:user).order(match_date: :desc)
   end
 
   def new
@@ -34,6 +34,7 @@ class ReviewsController < ApplicationController
   
   def update
     load_review
+    binding.pry
     if @review.update(update_params)
       redirect_to review_path
     else
@@ -61,11 +62,11 @@ class ReviewsController < ApplicationController
 
   private
   def review_params
-    params.require(:review).permit(:match_genre_id, :opponent_team, :comment, :match_url).merge(user_id: current_user.id, event_id: params[:event_id])
+    params.require(:review).permit(:match_genre_id, :opponent_team, :comment, :match_url, :match_date).merge(user_id: current_user.id, event_id: params[:event_id])
   end
   
   def update_params
-    params.require(:review).permit(:match_genre_id, :opponent_team, :comment, :match_url)
+    params.require(:review).permit(:match_genre_id, :opponent_team, :comment, :match_url, :match_date)
   end
 
   def load_review
