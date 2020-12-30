@@ -18,7 +18,7 @@
 
     <div class="main-calendar">
       <span class="calendar-head">
-        <%# <%= link_to 'this month', '/', class: "this-month" %> %>
+        <%= link_to 'this month', '/', class: "this-month" %>
       </span>
       <div class="calendar-part">
         <%= month_calendar events: @events do |date, events| %>
@@ -44,4 +44,4 @@
   </div>
 </div>
 
-<%# <%= render "shared/footer" %> %>
+<%= render "shared/footer" %>
