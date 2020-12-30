@@ -1,26 +1,39 @@
-.review-body {
-  height: 100vh;
+.review-body {  
+  background-color: #dfdfdf;
+  height: calc( 100% - 300px );
   width: 100vw;
   display: flex;
-}
-
-.review-side {
-  width: 10vw;
-  background-color: antiquewhite;
-  padding: 50px;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 0;
 }
 
 .review-main {
-  width: 70vw;
-  height: 500px;
-  background-color: #97d6fa;
-  padding: 100px;
-  display: flex;
-  flex-direction: column;
+  background-color: #f7f7f7;
+  padding: 20px;
+  height: 800px;
+  width: 60vw;
+  border: 3px groove ;
+  border-radius: 4px;
 }
 
-.list {
-  margin: 10px;
-  list-style: none;
-  display: inline;
+.new-list {
+  height: 60%;
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  background-color: #dfdfdf;
+  border: 3px inset ;
+}
+
+.new-list-title {
+  border-bottom: 2px double #747474;
+}
+
+.skill-item {
+  background-color: #f7f7f7;
+  font-size: 15px;
+  margin: 5px;
+  padding: 5px 10px;
+  border-radius: 4px;
 }
