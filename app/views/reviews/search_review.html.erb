@@ -1,0 +1,23 @@
+<div class="review-body">
+
+  <div class="review-main">
+    
+      <% if @results.length != 0 %>
+        <% @results.each do |review| %>
+          <li>
+            <% if review %>
+              <%= link_to review_path(review.id) do %>
+                <span class="skill-item"><%= review.match_genre.name %> <%= review.opponent_team %></span>
+              <% end %>
+            <% end %>
+          </li>
+        <% end %>
+      <% else %>
+      該当する項目がありません
+      <%= link_to "もどる", reviews_path %>
+      <% end %>
+
+  </div>
+</div>
+
+<%# <%= render "shared/footer" %> %>
