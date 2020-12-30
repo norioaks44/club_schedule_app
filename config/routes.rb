@@ -16,8 +16,13 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
-
-  resources :reviews, only: [:index, :show, :edit, :update, :destroy]
   
+  get '/reviews/searchreview',  to: 'reviews#search_review'
+  resources :reviews, only: [:index] do
+    collection do
+      get 'search'
+    end
+  end
+  resources :reviews, only: [:show, :edit, :update, :destroy]
 
 end

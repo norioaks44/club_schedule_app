@@ -3,18 +3,44 @@
 
 <div class="review-body">
 
-<div class="review-side">
-  <%= link_to 'もどる', root_path, class:"back-btn"%>
-</div>
-
 <div class="review-main">
-  <% @reviews.each do |review| %>
-    <li class="list">
-      <%= link_to review_path(review.id) ,method: :get do%>
-      <%= review.match_genre.name %>  vs<%= review.opponent_team%>
+
+  <div class="new-list">
+    <div class="new-list-title">
+      新着リスト
+    </div>
+
+    <% @news.each do |review| %>
+      <ul class="skill-item">
+        <%= link_to review_path(review.id) ,method: :get do%>
+        <%= review.match_genre.name %>  vs<%= review.opponent_team%>
+        <% end %>
+      </ul>
+    <% end %>
+
+    </div>
+
+
+    <div class="search-skill-form">
+      <%= search_form_for @p, url: reviews_searchreview_path do |form| %>
+
+      <div class="form">
+        <%= form.label :opponent_team, "対戦相手" %>
+        <%= form.search_field :opponent_team_cont %>
+      </div>
+
+      <div class="form">
+        <%= form.label :match_genre_id, "試合ジャンル"%>
+        <%= form.collection_select :match_genre_id_eq, MatchGenre.all, :id, :name, {include_blank: '指定なし'}, {class:"select"} %>
+      </div>
+
+        <%= form.submit "検索" %>
       <% end %>
-    </li>
-  <% end %>
+    </div>
+
+
+
+
 </div>
 </div>
 

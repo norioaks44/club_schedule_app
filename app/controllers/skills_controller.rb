@@ -48,7 +48,6 @@ class SkillsController < ApplicationController
 
   def search
     return nil if params[:keyword] == ""
-
   end
   
   def search_skill

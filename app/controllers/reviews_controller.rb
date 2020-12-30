@@ -2,9 +2,10 @@ class ReviewsController < ApplicationController
   before_action :authenticate_user!
   before_action :no_match_block, only: [:new, :create]
   before_action :review_double_block, only: [:new, :create]
+  before_action :searching_reviews, only: [:index, :search_review]
 
   def index
-    # @reviews = Review.order(created_at: :desc).limit(10)
+    @news = Review.order(created_at: :desc).limit(10)
     @reviews = Review.includes(:user).order("created_at desc")
   end
 
@@ -49,6 +50,15 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def search
+    return nil if params[:keyword] == ""
+  end
+  
+  def search_review
+    @results = @p.result
+  end
+
+
   private
   def review_params
     params.require(:review).permit(:match_genre_id, :opponent_team, :comment, :match_url).merge(user_id: current_user.id, event_id: params[:event_id])
@@ -76,4 +86,9 @@ class ReviewsController < ApplicationController
       redirect_to reviews_path
     end
   end
+
+  def searching_reviews
+    @p = Review.ransack(params[:q])
+  end
+
 end
