@@ -34,7 +34,6 @@ class ReviewsController < ApplicationController
   
   def update
     load_review
-    binding.pry
     if @review.update(update_params)
       redirect_to review_path
     else
