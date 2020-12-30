@@ -12,14 +12,14 @@
         </div>
 
         <div class="strategy-dictionary">
-          <%= link_to 'スキル', skills_path, class:"index-btn" %>
+          <%= link_to '解説辞典', skills_path, class:"index-btn" %>
         </div>
     </div>
 
     <div class="main-calendar">
-      <span class="calendar-head">
+      <div class="calendar-head">
         <%= link_to 'this month', '/', class: "this-month" %>
-      </span>
+      </div>
       <div class="calendar-part">
         <%= month_calendar events: @events do |date, events| %>
           <%= date.day %>

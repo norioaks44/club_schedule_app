@@ -3,8 +3,8 @@ class SkillsController < ApplicationController
   before_action :searching_skills, only: [:index, :search_skill]
 
   def index
-    @news = Skill.limit(10).order(" created_at DESC ")
-    @skills = Skill.includes(:user).order("created_at desc")
+    @news = Skill.limit(10).order(created_at: :desc)
+    @skills = Skill.includes(:user).order(created_at: :desc)
   end
 
   def new

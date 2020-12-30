@@ -1,6 +1,6 @@
 .top-page-header {
-  background-color: #00255e;
-  height: 150px;
+  background-color: #00265ee7;
+  height: 160px;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -15,9 +15,9 @@
 .logo-pic {
   width: 100%;
   height: 100%;
-  background-color: whitesmoke;
+  background-color: #f0f0f0;
   border-radius: 3px;
-  border: 4px groove whitesmoke;
+  border: 5px groove #97d6fa;
 }
 
 .account-status {
@@ -26,40 +26,50 @@
 }
 
 .account-1st {
-  background-color: #ffffff;
+  background-color: #f0f0f0;
   width: auto;
   border-radius: 50%;
   padding: 5px;
   margin-right: 5vw;
+  border: 5px groove #97d6fa;
 }
 
 .account-2nd {
-  background-color: #ffffff;
+  background-color: #f0f0f0;
   width: auto;
   border-radius: 50%;
   padding: 5px;
+  border: 5px groove #97d6fa;
 }
 
+.skills-header {
+  background-color: #0011ffc4;
+  height: 160px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-.skills-header {  
+/* .skills-header {  
   background-color: #d43a3a;
   height: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
 
 .skills-logo-pic {
   width: 100%;
   height: 100%;
   background-color: whitesmoke;
-  border: 4px groove whitesmoke;
   border-radius: 3px;
+  border: 5px groove #ff0000d7;
 }
 
 .reviews-header {
-  background-color: #31cf31;
+  background-color: #1bff1ba8;
   height: 150px;
   width: 100vw;
   display: flex;
@@ -70,7 +80,6 @@
 .reviews-logo-pic {
   width: 100%;
   height: 100%;
-  background-color: #cbfab8;
-  border: 4px groove #cbfab8;
+  border: 5px groove #f5f23ddc;
   border-radius: 3px;
 }

@@ -3,43 +3,50 @@
 <div class="skills-body">
 
   <div class="skills-main">
+
+    <div class="search-skill-main">
+      <div class="search-skill-title">検索フォーム
+      </div>
+      <div class="search-skill-form">
+        <%= search_form_for @p, url: skills_searchskill_path do |form| %>
+
+          <div class="skill-form">
+            <%= form.label :drill_name, "タイトル" %>
+            <%= form.search_field :drill_name_cont, class:"search-input" %>
+          </div>
+
+          <div class="skill-form">
+            <%= form.label :genre_id, "ジャンル"%>
+            <%= form.collection_select :genre_id_eq, Genre.all, :id, :name, {include_blank: '指定なし'}, {class:"search-select"} %>
+          </div>
+
+          <div class="skill-form">
+            <%= form.label :category_id, "対象ポジション"%>
+            <%= form.collection_select :category_id_eq, Category.all, :id, :name, {include_blank: '指定なし'}, {class:"search-select"} %>
+          </div>
+          <div class="search-form-btn">
+            <%= form.submit "検索" ,class:"search-btn"%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+      <%= link_to '新規登録', new_skill_path %>
+
     <div class="new-list">
       <div class="new-list-title">新着リスト</div>
-
-      <% @news.each do |skill| %>
-          <ul class="skill-item">
-            <%= link_to skill_path(skill.id), method: :get do %>
-              <%= skill.drill_name %>
-            <% end %>
-          </ul>
-      <% end %>
+      <div class="new-list-main">
+        <% @news.each do |skill| %>
+            <ul class="skill-item">
+              <%= link_to skill_path(skill.id), method: :get do %>
+                <%= skill.drill_name %>
+              <% end %>
+            </ul>
+        <% end %>
+      </div>
     </div>
 
-
-    <div class="search-skill-form">
-      <%= search_form_for @p, url: skills_searchskill_path do |form| %>
-
-      <div class="form">
-        <%= form.label :drill_name, "タイトル" %>
-        <%= form.search_field :drill_name_cont %>
-      </div>
-
-      <div class="form">
-        <%= form.label :genre_id, "ジャンル"%>
-        <%= form.collection_select :genre_id_eq, Genre.all, :id, :name, {include_blank: '指定なし'}, {class:"select"} %>
-      </div>
-
-      <div class="form">
-        <%= form.label :category_id, "対象ポジション"%>
-        <%= form.collection_select :category_id_eq, Category.all, :id, :name, {include_blank: '指定なし'}, {class:"select"} %>
-      </div>
-
-        <%= form.submit "検索" %>
-      <% end %>
-    </div>
-  <%= link_to '登録する', new_skill_path %>
   </div>
-
 
 </div>
 

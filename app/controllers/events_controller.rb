@@ -2,8 +2,7 @@ class EventsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :show, :edit, :update, :destroy]
 
   def index
-    query = "SELECT * FROM events ORDER BY id DESC"
-    @events = Event.find_by_sql(query)
+    @events = Event.includes(:user)
   end
 
   def new
