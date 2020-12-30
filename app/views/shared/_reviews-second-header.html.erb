@@ -1,5 +1,7 @@
 <header class="reviews--header">
 <div class="page-title">
-<%= link_to image_tag("reviews_logo.jpeg", class:"logo-pic"), skills_path %>
+    <%= link_to skills_path do %>
+      <%= image_tag asset_path("reviews_logo.jpeg"), class:"logo-pic" %>
+    <% end %>
 </div>
 </header>
