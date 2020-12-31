@@ -43,7 +43,7 @@
 
       <div class="skill-explain">
         <div class="explain-title">
-          説明
+          解説
         </div>
         <span class="explain-main"><%= @skill.info %></span>
       </div>
@@ -51,13 +51,19 @@
     </div>
 
     <div class="media-viewer">
-      <% if @skill.image.attached? %>
+      <% if @skill.image.attached? && @skill.video.attached? %>
         <img src="<%= rails_blob_path(@skill.image) %>", class="image-viewer" >
+        <%= video_tag rails_blob_path(@skill.video, disposition: "attachment"),class: "video-player", controls: :true %>
+      <% elsif @skill.image.attached? %>
+        <img src="<%= rails_blob_path(@skill.image) %>", class="image-viewer" >
+      <% elsif @skill.video.attached?%>
+        <%= video_tag rails_blob_path(@skill.video, disposition: "attachment"),class: "video-player", controls: :true %>
+      <% else %>
+        <div class="no-media">
+          参考動画像なし
+        </div>
       <% end %>
 
-      <% if @skill.video.attached? %>
-        <%= video_tag rails_blob_path(@skill.video, disposition: "attachment"),class: "video-player", controls: :true %>
-      <% end %>
     </div>
 
   </div>

@@ -57,7 +57,10 @@
 
 .explain-title {
   text-align: center;
+  font-size: 16px;
+  margin-bottom: 5px;
 }
+
 .explain-main{
   word-wrap: break-word;
 }
@@ -84,4 +87,10 @@
   max-width: 500px;
   max-height: 400px;
   padding: 20px;
+}
+
+.no-media {
+  height: 400px;
+  width: 400px;
+  text-align: center;
 }
