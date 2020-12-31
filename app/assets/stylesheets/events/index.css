@@ -5,6 +5,7 @@ a {
 .event-body {
   height: 100vh;
   width: 100vw;
+  min-width: 750px;
   min-height: 700px;
   background-color: #d3d3d3;
 }
@@ -19,6 +20,7 @@ a {
   width: 150px;
   height: 500px;
   margin-right: 50px;
+  padding-left: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -55,6 +57,7 @@ a {
 .main-calendar {
   width: 60vw;
   max-width: 900px;
+  min-width: 500px;
   padding: 5px;
   border: 5px groove #97d6fa;
   border-radius: 5px;
@@ -69,11 +72,6 @@ a {
 .this-month {
   margin-left: 70px;
   vertical-align: -8px;
-}
-
-.right-side {
-  /* background-color: #97d6fa; */
-  width: 50px;
 }
 
 .day_title_name {

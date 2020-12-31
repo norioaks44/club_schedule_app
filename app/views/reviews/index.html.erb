@@ -3,45 +3,54 @@
 
 <div class="review-body">
 
-<div class="review-main">
+  <div class="review-main">
 
-  <div class="new-list">
-    <div class="new-list-title">
-      新着リスト
-    </div>
+    <div class="new-reviews-list">
+      <div class="new-list-title">
+        新着リスト
+      </div>
 
-    <% @news.each do |review| %>
-      <ul class="skill-item">
-        <%= link_to review_path(review.id) ,method: :get do%>
-        <%= review.match_genre.name %>  vs<%= review.opponent_team%>
+      <div class="new-reviews-main">
+        <% @news.each do |review| %>
+          <ul class="review-item">
+            <%= link_to review_path(review.id) ,method: :get do%>
+            <%= review.match_genre.name %>  vs<%= review.opponent_team%>
+            <% end %>
+          </ul>
         <% end %>
-      </ul>
-    <% end %>
-
+      </div>
     </div>
 
+
+  <div class="search-skill-main">
+    <div class="search-skill-title">
+    検索フォーム
+    </div>
 
     <div class="search-skill-form">
-      <%= search_form_for @p, url: reviews_searchreview_path do |form| %>
+        <%= search_form_for @p, url: reviews_searchreview_path do |form| %>
 
-      <div class="form">
-        <%= form.label :opponent_team, "対戦相手" %>
-        <%= form.search_field :opponent_team_cont %>
-      </div>
+          <div class="skill-form">
+            <%= form.label :opponent_team, "対戦相手" %>
+            <%= form.search_field :opponent_team_cont, class:"search-input" %>
+          </div>
 
-      <div class="form">
-        <%= form.label :match_genre_id, "試合ジャンル"%>
-        <%= form.collection_select :match_genre_id_eq, MatchGenre.all, :id, :name, {include_blank: '指定なし'}, {class:"select"} %>
-      </div>
-
-        <%= form.submit "検索" %>
-      <% end %>
+          <div class="skill-form">
+            <%= form.label :match_genre_id, "試合ジャンル"%>
+            <%= form.collection_select :match_genre_id_eq, MatchGenre.all, :id, :name, {include_blank: '指定なし'}, {class:"search-select"} %>
+          </div>
+          <div class="search-form-btn">
+            <%= form.submit "検索" ,class:"search-btn"%>
+          </div>
+        <% end %>
     </div>
+    
+  </div>
 
 
 
 
-</div>
+  </div>
 </div>
 
 <%= render "shared/footer" %>
