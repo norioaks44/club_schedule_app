@@ -1,23 +1,76 @@
-  <p><%= @skill.drill_name %></p> <br>
-  <p><%= @skill.info %></p>
-  <p>対象：<%= @skill.genre.name %></p>
-  <p>対象：<%= @skill.category.name %></p>
+<%= render "shared/skills-second-header" %>
 
-<% if @skill.image.attached? %>
-  <img src="<%= rails_blob_path(@skill.image) %>">
-<% end %>
+<div class="skill-body">
 
-<% if @skill.video.attached? %>
-  <%= video_tag rails_blob_path(@skill.video, disposition: "attachment"),class: "video-size", controls: :true %>
-<% end %>
+  <div class="skill-info"> 
 
-  <% if user_signed_in? %>
-    <div>
-      <%= link_to '編集', edit_skill_path(@skill.id), class:"skill-edit-btn" %>
-      <%= link_to '削除する', skill_path(@skill.id), method: :delete, class: "skill-destroy" %>
+    <div class="skill-info-main">
+      <div class="skill-info-box">
+        <div class="info-left-box">
+        名前
+        </div>
+        <div class="info-center-box">
+        ：
+        </div>
+        <div class="info-right-box">
+          <%= @skill.drill_name %>
+        </div>
+      </div>
+
+      <div class="skill-info-box">
+        <div class="info-left-box">
+        ジャンル
+        </div>
+        <div class="info-center-box">
+        ：
+        </div>
+        <div class="info-right-box">
+          <%= @skill.genre.name %>
+        </div>
+      </div>
+
+      <div class="skill-info-box">
+        <div class="info-left-box">
+        対象
+        </div>
+        <div class="info-center-box">
+        ：
+        </div>
+        <div class="info-right-box">
+          <%= @skill.category.name %>
+        </div>
+      </div>
+
+      <div class="skill-explain">
+        <div class="explain-title">
+          説明
+        </div>
+        <span class="explain-main"><%= @skill.info %></span>
+      </div>
+
     </div>
-  <% end %>
-  
-  <div>
-    <%=link_to 'もどる', skills_path, class:"back-btn" %>
+
+    <div class="media-viewer">
+      <% if @skill.image.attached? %>
+        <img src="<%= rails_blob_path(@skill.image) %>", class="image-viewer" >
+      <% end %>
+
+      <% if @skill.video.attached? %>
+        <%= video_tag rails_blob_path(@skill.video, disposition: "attachment"),class: "video-player", controls: :true %>
+      <% end %>
+    </div>
+
   </div>
+
+    <% if user_signed_in? %>
+      <div>
+        <%= link_to '編集', edit_skill_path(@skill.id), class:"skill-edit-btn" %>
+        <%= link_to '削除する', skill_path(@skill.id), method: :delete, class: "skill-destroy" %>
+      </div>
+    <% end %>
+
+    <div>
+      <%=link_to 'もどる', skills_path, class:"back-btn" %>
+    </div>
+
+</div>
