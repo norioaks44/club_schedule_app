@@ -1,47 +1,71 @@
-<div class="event-day">
+<%= render "shared/second-header"%>
 
-  <h2 class="event-day-title"><%= @event.start_time %>の詳細</h2>
+<div class="event-show">
 
-  <div class="event-day-main">
-    <% if @event.title_id != 2 %>
 
-      <div class="weight-bold-text">タイトル：
+  <div class="event-day-contents">
+
+  <div class="event-day-title"><%= @event.start_time %></div>
+  <div class="day-info">
+
+    <div class="event-info-box">
+      <div class="event-left-box">
+      タイトル
+      </div>
+      <div class="event-center-box">
+      ：
+      </div>
+      <div class="event-right-box">
         <%= @event.title.name %>
       </div>
+    </div>
 
-      <div class="weight-bold-text">
-          集合時間：<%= @event.meeting_time.name %>〜
-      </div>
+      <% if @event.meeting_time_id != 2 %>
 
-      <%# 空白の場合 %>
-      <% if @event.info != "" %>
-        <div class="weight-bold-text">詳細情報：
-          <%= @event.info %>
+        <div class="event-info-box">
+          <div class="event-left-box">
+            集合時間
+          </div>
+          <div class="event-center-box">
+            ：
+          </div>
+          <div class="event-right-box">
+            <%= @event.meeting_time.name %>〜
+          </div>
         </div>
+      
       <% end %>
-      <%# 空白の場合 %>
 
-    <% else %>
-      <%# OFFの場合 %>
-      <div class="weight-bold-text">
-        OFF！！<br>
-        しっかり休みましょう！
+      <div class="event-explain">
+        <div class="info-title">
+          詳細情報
+        </div>
+        <% if @event.info != "" %>
+          <div class="explain-main">
+            <%= @event.info %>
+          </div>
+        <% else %>
+          <%# 空白の場合 %>
+            <div class="off-explain-main">特になし
+            </div>
+          <%# 空白の場合 %>
+        <% end %>
       </div>
-      <%# OFFの場合 %>
-    <% end %>
+  </div>
+
 
   <% if user_signed_in? %>
     <%# 試合の場合はレビュー作成へ %>
-    <% if ( @event.title_id == 4 ) || ( @event.title_id == 5 )%>
-      <%= link_to '試合レビューへ', new_event_review_path(@event.id) %>
-    <% end %>
+      <% if ( @event.title_id == 4 ) || ( @event.title_id == 5 )%>
+        <%= link_to '試合レビューへ', new_event_review_path(@event.id) %>
+      <% end %>
     <%# 試合の場合はレビュー作成へ %>
     <div>
       <%= link_to '編集', edit_event_path, class: "event-edit-btn" %>
       <%= link_to '削除', event_path(@event.id), method: :delete, class: "event-destroy-btn" %>
     </div>
   <% end %>
-  
+
   <div>
     <%=link_to 'もどる', root_path, class:"back-btn" %>
   </div>

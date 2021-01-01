@@ -60,9 +60,9 @@
   font-size: 16px;
   margin-bottom: 5px;
 }
-
 .explain-main{
   word-wrap: break-word;
+  word-break: keep-all;
 }
 
 .media-viewer {
