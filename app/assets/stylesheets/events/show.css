@@ -24,13 +24,14 @@
   flex-direction: column;
 }
 
-.day-info {
+.event-info-body {
   background-color: #f3f3f3c9;
   height: 60%;
   min-height: 500px;
   width: 80%;
   max-width: 500px;
   padding: 40px;
+  font-size: 18px;
   border: 1px solid #d1d1d1;
   border-radius: 4px;
 }
@@ -61,7 +62,7 @@
 
 .info-title {
   text-align: center;
-  font-size: 16px;
+  font-size: 20px;
   margin-bottom: 5px;
 }
 
