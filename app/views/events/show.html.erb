@@ -3,31 +3,31 @@
   <h2 class="event-day-title"><%= @event.start_time %>の詳細</h2>
 
   <div class="event-day-main">
-    <% if @event.meeting_time_id != 2 %>
+    <% if @event.title_id != 2 %>
 
-    <div class="weight-bold-text">タイトル：
-      <%= @event.title.name %>
-    </div>
+      <div class="weight-bold-text">タイトル：
+        <%= @event.title.name %>
+      </div>
 
-    <div class="weight-bold-text">
-        集合時間：<%= @event.meeting_time.name %>〜
-    </div>
+      <div class="weight-bold-text">
+          集合時間：<%= @event.meeting_time.name %>〜
+      </div>
 
-    <%# 空白の場合 %>
+      <%# 空白の場合 %>
       <% if @event.info != "" %>
         <div class="weight-bold-text">詳細情報：
           <%= @event.info %>
         </div>
       <% end %>
-    <%# 空白の場合 %>
+      <%# 空白の場合 %>
 
     <% else %>
-    <%# OFFの場合 %>
-    <div class="weight-bold-text">
-      OFF！！<br>
-      しっかり休みましょう！
-    </div>
-    <%# OFFの場合 %>
+      <%# OFFの場合 %>
+      <div class="weight-bold-text">
+        OFF！！<br>
+        しっかり休みましょう！
+      </div>
+      <%# OFFの場合 %>
     <% end %>
 
   <% if user_signed_in? %>
@@ -41,6 +41,7 @@
       <%= link_to '削除', event_path(@event.id), method: :delete, class: "event-destroy-btn" %>
     </div>
   <% end %>
+  
   <div>
     <%=link_to 'もどる', root_path, class:"back-btn" %>
   </div>
