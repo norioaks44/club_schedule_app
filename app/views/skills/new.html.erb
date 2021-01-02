@@ -32,7 +32,7 @@
           <div class="side-form">
           </div>
           <div class="main-form">
-            <%= form.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select"}) %>
+            <%= form.collection_select(:genre_id, Genre.all, :id, :name, {include_blank:"選択して下さい"}, {class:"select"}) %>
           </div>
         </div>
       </div>
@@ -44,7 +44,7 @@
         <div class="form">
           <div class="side-form"></div>
           <div class="main-form">
-            <%= form.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select"}) %>
+            <%= form.collection_select(:category_id, Category.all, :id, :name, {include_blank:"選択して下さい"}, {class:"select"}) %>
           </div>
         </div>
       </div>

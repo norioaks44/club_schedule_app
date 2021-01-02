@@ -1,23 +1,25 @@
 <%= render "shared/reviews-second-header"%>
 
-<div class="review-body">
+<div class="review-index">
 
-  <div class="review-main">
+  <div class="reviews-search-main">
     
       <% if @results.length != 0 %>
         <% @results.each do |review| %>
           <li>
             <% if review %>
               <%= link_to review_path(review.id) do %>
-                <span class="skill-item"><%= review.match_genre.name %> <%= review.opponent_team %></span>
+                <span class="review-search-item">
+                <%= review.match_date%>
+                <%= review.match_genre.name %> <%= review.opponent_team %></span>
               <% end %>
             <% end %>
           </li>
         <% end %>
       <% else %>
       該当する項目がありません
-      <%= link_to "もどる", reviews_path %>
       <% end %>
+      <%= link_to "もどる", reviews_path %>
 
   </div>
 </div>

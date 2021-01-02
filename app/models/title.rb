@@ -1,6 +1,6 @@
 class Title < ActiveHash::Base
   self.data = [
-    { id: 1, name: '--'},
+    # { id: 1, name: '選択して下さい'},
     { id: 2, name: '放課後練習'},
     { id: 3, name: '半日練習'},
     { id: 4, name: '練習試合'},

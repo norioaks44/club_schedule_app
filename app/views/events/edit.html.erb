@@ -13,7 +13,7 @@
             <div class="side-form">
             </div>
             <div class="main-form">
-            <%= f.collection_select(:title_id, Title.all, :id, :name, {}, {class:"select-box", id:"event-title"}) %>
+            <%= f.collection_select(:title_id, Title.all, :id, :name, {include_blank:"選択して下さい"}, {class:"select-box", id:"event-title"}) %>
             </div>
           </div>
 
@@ -31,7 +31,7 @@
             <div class="side-form">
             </div>
             <div class="main-form">
-            <%= f.collection_select(:meeting_time_id, MeetingTime.all, :id, :name, {}, {class:"select-box", id:"event-meeting-time"}) %>
+            <%= f.collection_select(:meeting_time_id, MeetingTime.all, :id, :name, {include_blank:"選択して下さい"}, {class:"select-box", id:"event-meeting-time"}) %>
             </div>
           </div>
 

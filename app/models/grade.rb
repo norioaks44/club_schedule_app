@@ -1,6 +1,6 @@
 class Grade < ActiveHash::Base
 self.data = [
-  { id: 1, name: '--'},
+  # { id: 1, name: '選択して下さい'},
   { id: 2, name: '44'},
   { id: 3, name: '43'},
   { id: 4, name: '42'},

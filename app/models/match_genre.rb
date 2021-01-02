@@ -1,6 +1,6 @@
 class MatchGenre < ActiveHash::Base
   self.data = [
-    { id: 1, name: '--'},
+    # { id: 1, name: '--'},
     { id: 2, name: '練習試合'},
     { id: 3, name: '新人戦'},
     { id: 4, name: '関東予選'},

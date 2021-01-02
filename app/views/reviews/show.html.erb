@@ -10,6 +10,18 @@
 
       <div class="review-info-box">
         <div class="review-left-box">
+          日付
+        </div>
+        <div class="review-center-box">
+          ：
+        </div>
+        <div class="review-right-box">
+          <%= @review.match_date %>
+        </div>
+      </div>
+
+      <div class="review-info-box">
+        <div class="review-left-box">
           対戦相手
         </div>
         <div class="review-center-box">
@@ -53,13 +65,17 @@
 
     </div>
 
-    <div class="edit-destroy">
-      <%= link_to '編集', edit_review_path, class: "edit-btn" %>
-      <%= link_to '削除', review_path(@review.id), method: :delete, class: "destroy-btn" %>
-    </div>
-  
+    <% if user_signed_in? %>
+      <div class="edit-destroy">
+        <%= link_to '編集', edit_review_path, class: "edit-btn" %>
+        <%= link_to '削除', review_path(@review.id), method: :delete, class: "destroy-btn" %>
+      </div>
+    <% end %>
+    
     <%= link_to 'もどる', reviews_path%>
 
   </div>
   
 </div>
+
+<%= render "shared/footer" %>

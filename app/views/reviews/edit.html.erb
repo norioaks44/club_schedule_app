@@ -33,7 +33,7 @@
           <div class="side-form">
           </div>
           <div class="main-form">
-            <%= f.collection_select(:match_genre_id, MatchGenre.all, :id, :name, {}, {class:"select", id:"match_genre_box"}) %>
+            <%= f.collection_select(:match_genre_id, MatchGenre.all, :id, :name, {include_blank:"選択して下さい"}, {class:"select", id:"match_genre_box"}) %>
           </div>
         </div>
       </div>
