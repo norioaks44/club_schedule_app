@@ -1,55 +1,83 @@
 <%= render "shared/reviews-second-header"%>
 
-<%= form_with model: @review, url: event_reviews_path, class:'form-wrap', local: true do |f| %>
+<div class="review-body">
+  <%= form_with model: @review, url: event_reviews_path, class:'form-wrap', local: true do |f| %>
 
-  <%= render 'shared/error_messages', model: f.object %> 
+    <%= render 'shared/error_messages', model: f.object %> 
 
-<h1 class="reveiw-title">新規レビュー登録</h1>
-
-
-  <%# <div class='page-form'> %>
-
-    <div class='date-field'>
-      <%= raw sprintf(
-                  f.date_select(
-                    :match_date,
-                    class:'select-',
-                    use_month_numbers: true,
-                    prompt:'--',
-                    start_year: 2019,
-                    end_year: (Time.now.year + 2),
-                    date_separator: '%s'),
-                  "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
-    </div>
-
-    <div class='page-field'>
-      <%= f.label :match_genre_id, "試合ジャンル"%>
-      <%= f.collection_select(:match_genre_id, MatchGenre.all, :id, :name, {}, {class:"select-box", id:"event-title"}) %>
-    </div>
-
-    <div class='page-field'>
-      <%= f.label :opponent_team, "対戦相手"%>
-      <%= f.text_field :opponent_team, class:"input-form" %>
-    </div>
+    <h1 class="new-reveiw-title">新規試合レビュー登録</h1>
 
 
-    <div class='page-field'>
-      <%= f.label :comment, "レビュー本文"%>
-      <%= f.text_area :comment, class:"input-form", placeholder:" 総括", rows:'4'%>
-    </div>
+      <div class="form-box">
+        <div class="form-title">
+          <%= f.label :match, "試合日"%>
+        </div>
+        <div class='review-f'>
+          <div class="side-form">
+          </div>
+          <div class="main-form">
+            <div class='date-field'>
+              <%= raw sprintf(f.date_select(:match_date, class:'select-',use_month_numbers: true,prompt:'--',start_year: 2019,end_year: (Time.now.year + 2),date_separator: '%s'),
+              "年", "月") + "日" %>
+            </div>
+          </div>
+        </div>
+      </div>
 
-    <div class='page-field'>
-      <%= f.label :match_url, "試合動画URL(You tubeなど)"%>
-      <%= f.text_area :match_url, class:"input-form", placeholder:" https://www.youtube.com/watch?v=○○○○○○" %>
-    </div>
+      
+      <div class="form-box">
+        <div class="form-title">
+          <%= f.label :match_genre_id, "試合ジャンル"%>
+        </div>
+        <div class='form'>
+          <div class="side-form">
+          </div>
+          <div class="main-form">
+            <%= f.collection_select(:match_genre_id, MatchGenre.all, :id, :name, {}, {class:"select", id:"match_genre_box"}) %>
+          </div>
+        </div>
+      </div>
 
-  <%# </div> %>
+      <div class="form-box">
+        <div class="form-title">
+          <%= f.label :opponent_team, "対戦相手"%>
+        </div>
+        <div class='form'>
+          <div class="side-form">
+          </div>
+          <div class="main-form">
+            <%= f.text_field :opponent_team, class:"input-form" %>
+          </div>
+        </div>
+      </div>
 
-  <div class="submit-post">
-    <%= f.submit '登録' ,class:"submit-btn" %>
-  </div>
-  <div>
-    <%=link_to 'もどる', reviews_path, class:"back-btn" %>
-  </div>
 
-<% end %>
+      <div class="form-box">
+        <div class="form-title">
+          <%= f.label :comment, "レビュー本文"%>
+        </div>
+        <div class="form">
+          <%= f.text_area :comment, class:"input-form", placeholder:"総括", rows:'8'%>
+        </div>
+      </div>
+
+      <div class="form-box">
+        <div class="form-title">
+          <%= f.label :match_url, "試合動画URL(You tubeなど)"%>
+        </div>
+        <div class='form'>
+            <%= f.text_area :match_url, class:"input-form", placeholder:" https://www.youtube.com/watch?v=○○○○○○" %>
+        </div>
+      </div>
+
+
+      <div class="submit-post">
+        <%= f.submit '登録' ,class:"submit-btn" %>
+      </div>
+      <div>
+        <%=link_to 'もどる', event_path(@event.id), class:"back-btn" %>
+      </div>
+
+  <% end %>
+
+</div>
