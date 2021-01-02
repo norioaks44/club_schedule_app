@@ -1,17 +1,65 @@
+<%= render "shared/reviews-second-header"%>
 
 <div class="review-show">
 
-<%= @review.match_genre.name %>
-<%= @review.opponent_team %>
-<%= @review.comment %>
+  <div class="review-show-body">
 
-<% if @review.match_url != "" %>
-  <%= link_to  '外部リンク', @review.match_url %>
-<% end %>
 
-</div>
-  <div>
-    <%= link_to '編集', edit_review_path, class: "event-edit-btn" %>
-    <%= link_to '削除', review_path(@review.id), method: :delete, class: "event-destroy-btn" %>
+
+    <div class="review-show-main">
+
+      <div class="review-info-box">
+        <div class="review-left-box">
+          対戦相手
+        </div>
+        <div class="review-center-box">
+          ：
+        </div>
+        <div class="review-right-box">
+          <%= @review.opponent_team %>
+        </div>
+      </div>
+
+      <div class="review-info-box">
+        <div class="review-left-box">
+          試合形式
+        </div>
+        <div class="review-center-box">
+          ：
+        </div>
+        <div class="review-right-box">
+          <%= @review.match_genre.name %>
+        </div>
+      </div>
+
+      <div class="review-comment">
+        <div class="review-comment-title">
+          コメント
+        </div>
+        <div class="review-comment-main"><%= @review.comment %>
+        </div>
+      </div>
+
+      <% if @review.match_url != "" %>
+        <div class="match-url-box">
+          <div class="match-url-title">
+            試合ビデオURL
+          </div>
+          <div class="match-url-main">
+            <%= link_to  @review.match_url, @review.match_url, class:"url" %>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+
+    <div class="edit-destroy">
+      <%= link_to '編集', edit_review_path, class: "edit-btn" %>
+      <%= link_to '削除', review_path(@review.id), method: :delete, class: "destroy-btn" %>
+    </div>
+  
   </div>
+  
+</div>
+
 <%= link_to 'もどる', reviews_path%>

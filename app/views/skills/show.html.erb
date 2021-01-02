@@ -69,9 +69,9 @@
   </div>
 
     <% if user_signed_in? %>
-      <div>
-        <%= link_to '編集', edit_skill_path(@skill.id), class:"skill-edit-btn" %>
-        <%= link_to '削除する', skill_path(@skill.id), method: :delete, class: "skill-destroy" %>
+      <div class="edit-destroy">
+        <%= link_to '編集', edit_skill_path(@skill.id), class:"edit-btn" %>
+        <%= link_to '削除', skill_path(@skill.id), method: :delete, class: "destroy-btn" %>
       </div>
     <% end %>
 

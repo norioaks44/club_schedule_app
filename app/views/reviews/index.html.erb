@@ -1,7 +1,7 @@
 <%= render "shared/reviews-header" %>
 
 
-<div class="review-body">
+<div class="review-index">
 
   <div class="review-main">
 
@@ -14,7 +14,7 @@
         <% @news.each do |review| %>
           <ul class="review-item">
             <%= link_to review_path(review.id) ,method: :get do%>
-            <%= review.match_genre.name %>  vs<%= review.opponent_team%>
+            <%= review.match_genre.name %>  vs <%= review.opponent_team%>
             <% end %>
           </ul>
         <% end %>

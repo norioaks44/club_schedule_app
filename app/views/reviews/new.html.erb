@@ -1,11 +1,11 @@
 <%= render "shared/reviews-second-header"%>
 
-<div class="review-body">
+<div class="review-new">
   <%= form_with model: @review, url: event_reviews_path, class:'form-wrap', local: true do |f| %>
 
     <%= render 'shared/error_messages', model: f.object %> 
 
-    <h1 class="new-reveiw-title">新規試合レビュー登録</h1>
+    <h1 class="new-review-title">新規試合レビュー登録</h1>
 
 
       <div class="form-box">
