@@ -7,13 +7,13 @@
 <h1 class="reveiw-title">新規レビュー登録</h1>
 
 
-  <div class='page-form'>
+  <%# <div class='page-form'> %>
 
     <div class='date-field'>
       <%= raw sprintf(
                   f.date_select(
                     :match_date,
-                    class:'select-date',
+                    class:'select-',
                     use_month_numbers: true,
                     prompt:'--',
                     start_year: 2019,
@@ -43,7 +43,7 @@
       <%= f.text_area :match_url, class:"input-form", placeholder:" https://www.youtube.com/watch?v=○○○○○○" %>
     </div>
 
-  </div>
+  <%# </div> %>
 
   <div class="submit-post">
     <%= f.submit '登録' ,class:"submit-btn" %>

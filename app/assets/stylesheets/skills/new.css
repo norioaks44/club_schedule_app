@@ -1,53 +1,65 @@
 .form-wrap{
-  height: 100vh;
-  width: 100vw;
-  background-color: #f8f8f8f8;
+  background-color: #f7f7f7;
+  padding: 20px;
+  height: 70%;
+  min-height: 700px;
+  width:70%;
+  min-width: 450px;
+  max-width: 700px;
+  border: 3px groove ;
+  border-radius: 4px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-direction: column;
 }
 
-.page-form{
-  width: 30%;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 20px;
+.new-skill-title {
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
-.page-field{
+.form-body {
   width: 100%;
+  max-width: 600px;
   display: flex;
+  align-items: center;
   flex-direction: column;
-  margin-top: 10px;
 }
 
-.select{
-  height: 30px;
-  width: 250px;
+.form-box {
+  width: 400px;
 }
 
-.input-form{
-  resize: none;
-  padding-left: 10px;
+#skill_drill_name {
+  width: 70%;
 }
 
-.tag-field{
+.skill-info-form{
+    width: 100%;
+    padding-left: 20px;
+    text-align: right;
+  }
+  
+  .select{
+    height: 30px;
+    width: 200px;
+  }
+  
+  .input-form{
+    resize: none;
+    padding-left: 10px;
+    width: 100%;
+  }
+
+.media-form{
+  background-color: #d4d4d471;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  margin-top: 10px;
-}
-
-.input-tag{
-  padding-left: 10px;
-}
-
-.child{
-  border-bottom:#666 1px solid;
-  margin: 10px 0;
-  padding-left: 11px;
+  padding:10px;
+  margin: 5px;
+  text-align: right;
+  border-radius: 4px;
 }
 
 .submit-post{
