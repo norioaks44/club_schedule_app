@@ -65,19 +65,19 @@
 .review-comment-title {
   text-align: center;
   font-size: 16px;
-  /* margin-bottom: 15px; */
 }
 .review-comment-main{
   width: 90%;
   padding: 20px 10px 4px;
+  margin-bottom: 10px;
   word-wrap: break-word;
   word-break: normal;
-  border-bottom: 1px solid #d1d1d1;
 }
 
 .match-url-box {
   height: 40px;
   padding: 20px 10px;
+  border-top: 1px solid #d1d1d1;
 }
 
 .match-url-title {
