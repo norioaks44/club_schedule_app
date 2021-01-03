@@ -22,7 +22,7 @@
 .date-field {
   display: flex;
   font-size: 18px;
-  justify-content: flex-end;
+  justify-content: space-evenly;
 }
 
 #review_match_date_1i {
@@ -37,9 +37,15 @@
   margin-right: 2px;
 }
 
+#match_genre_box {
+  width: 240px;
+  padding-right: 5px;
+}
+
 #review_opponent_team {
   height: 26px;
-  margin-right: 5px;
+  width: 240px;
+  padding-right: 5px;
 }
 
 

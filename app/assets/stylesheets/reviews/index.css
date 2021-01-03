@@ -51,14 +51,30 @@
   margin: 2px 5px;
   padding: 2px 10px 2px 20px;
   border-radius: 4px;
-  
 }
 
-.skill-item {
-  background-color: #f7f7f7;
-  font-size: 15px;
-  margin: 5px;
-  padding: 5px 10px;
+.search-skill-title {
+  font-size: 16px;
+  text-align: center;
+  padding: 4px 0 ;
+  border: 4px ridge #c7c7c7;
   border-radius: 4px;
 }
 
+
+.search-reviews-main {
+  width: 80%;
+  background-color: #e7e7e7;
+  border-radius: 4px;
+}
+
+.search-skill-form {
+  background-color: #e7e7e7;
+}
+
+.skill-form {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  padding: 10px;
+}
