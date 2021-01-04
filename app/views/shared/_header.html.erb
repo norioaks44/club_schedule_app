@@ -3,20 +3,13 @@
 
   <div class="account-status">
       <%if user_signed_in? %>
-        <div class="account-1st">
-          <%# <%= link_to current_user.name, "#", class: "user-name" %>
+        <div class="account-btn">
           <%= current_user.name %>
         </div>
-        <div class="account-2nd">
-          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
-        </div>
+        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "account-btn" %>
       <% else %>
-        <div class="account-1st">
-          <%= link_to 'ログイン', new_user_session_path, class: "login" %>
-        </div>
-        <div class="account-2nd">
-          <%= link_to '新規登録', new_user_registration_path, class: "sign-up" %>
-        </div>
+          <%= link_to 'ログイン', new_user_session_path, class: "account-btn" %>
+          <%= link_to '新規登録', new_user_registration_path, class: "account-btn" %>
       <% end %>
   </div>
 </header>

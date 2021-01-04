@@ -25,20 +25,14 @@
   display: flex;
 }
 
-.account-1st {
+.account-btn {
   background-color: #f0f0f0;
-  width: auto;
-  border-radius: 50%;
-  padding: 5px;
+  width: 80px;
+  height: 25px;
+  border-radius: 100%;
+  text-align: center;
+  padding: 10px;
   margin-right: 5vw;
-  border: 5px groove #97d6fa;
-}
-
-.account-2nd {
-  background-color: #f0f0f0;
-  width: auto;
-  border-radius: 50%;
-  padding: 5px;
   border: 5px groove #97d6fa;
 }
 
