@@ -12,6 +12,15 @@ extend ActiveHash::Associations::ActiveRecordExtensions
 
   has_many :sns_credentials
 
+  with_options presence: true do
+    NAME_REGEX = /\A[ぁ-んァ-ン一-龥]/.freeze # 全角
+    validates :name, format: { with: NAME_REGEX, message: 'enter in full characters' }
+    PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze # 半角英数字
+    validates :password, format: { with: PASSWORD_REGEX, message: 'include both letters and numbers' }
+    validates :grade_id
+    validates :position_id, numericality: { other_than: 1 } 
+  end
+
   def self.from_omniauth(auth)
     sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create
 

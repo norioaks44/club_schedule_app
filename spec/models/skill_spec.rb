@@ -1,5 +1,19 @@
 require 'rails_helper'
 
 RSpec.describe Skill, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before do
+    @skill = FactoryBot.build(:skill)
+    @skill.image
+  end
+
+  describe do
+    
+    
+  end
 end
+
+
+
+
+
+
