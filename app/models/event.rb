@@ -8,10 +8,11 @@ class Event < ApplicationRecord
   has_one :review
 
   with_options presence: true do
-    validates :title_id, numericality: { other_than: 1, message: 'Select' }
+    validates :title_id
     validates :start_time, uniqueness: true
-    validates :meeting_time_id, numericality: { other_than: 1, message: 'Select' }
+    validates :meeting_time_id
   end
   
+  validates :info, length: { maximum: 1000 }
 
 end

@@ -7,9 +7,9 @@ FactoryBot.define do
 
     association :user
 
-    after(:build) do |skill|
-      skill.image.attach(io: File.open('public/images/test_image.png'), filename: 'test_image.png')
-    end
+    # after(:build) do |skill|
+    #   skill.image.attach(io: File.open('public/images/test_image.png'), filename: 'test_image.png')
+    # end
 
   end
 end

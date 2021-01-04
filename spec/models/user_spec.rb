@@ -79,7 +79,6 @@ RSpec.describe User, type: :model do
       it 'ポジションが空だと登録できない' do
         @user.position_id = ''
         @user.valid?
-        # binding.pry
         expect(@user.errors.full_messages).to include("Position can't be blank")
       end
 

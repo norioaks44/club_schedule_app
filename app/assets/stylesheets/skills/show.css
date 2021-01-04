@@ -47,6 +47,8 @@
 .info-right-box {
   width: calc( 90% - 80px );
   text-align: center;
+  word-wrap: break-word;
+  word-break: keep-all;
 }
 
 .skill-explain {

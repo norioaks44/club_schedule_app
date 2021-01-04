@@ -8,8 +8,8 @@ class Skill < ApplicationRecord
   has_one_attached :image
 
   with_options presence: true do
-    validates :drill_name
-    validates :info
+    validates :drill_name, length: { maximum: 20 }
+    validates :info, length: { maximum: 1000 }
     validates :category_id, numericality: { other_than: 1 } 
     validates :genre_id, numericality: { other_than: 1 } 
   end
