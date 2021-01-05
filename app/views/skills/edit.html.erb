@@ -80,6 +80,14 @@
         </div>
       </div>
 
+      <div class="form-box">
+        <div class="form-title">
+          <%= form.label :skill_url, "参考動画URL(You tubeなど)"%>
+        </div>
+        <div class='media-form'>
+            <%= form.text_field :skill_url, class:"input-form", placeholder:" https://www.youtube.com/watch?v=○○○○○○" %>
+        </div>
+      </div>
     
       <div class="submit-post">
         <%= form.submit '登録' ,class:"submit-btn" %>

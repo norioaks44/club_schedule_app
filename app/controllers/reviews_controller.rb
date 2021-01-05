@@ -74,8 +74,8 @@ class ReviewsController < ApplicationController
 
   def no_match_block
     @event = Event.find(params[:event_id])
-    if @event.title_id == 4 
-    elsif @event.title_id == 5
+    if @event.title_id == 3 
+    elsif @event.title_id == 4
     else
       redirect_to root_path
     end

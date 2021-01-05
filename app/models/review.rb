@@ -1,16 +1,19 @@
 class Review < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :match_genre
-  belongs_to :event
-  belongs_to :user
+  belongs_to :event, dependent: :destroy
+  belongs_to :user, dependent: :destroy
 
   with_options presence: true do
-    validates :match_genre_id, numericality: { other_than: 1, message: "can't be blank" }
+    validates :match_genre_id
     validates :opponent_team
     validates :comment
     validates :match_date
   end
 
   validates :event_id, uniqueness: true
+
+  URL_REGEX =  /\A#{URI::regexp(%w(http https))}\z/.freeze
+  validates :match_url, format: { with: URL_REGEX, message: "enter the URL", allow_blank: true }
 
 end

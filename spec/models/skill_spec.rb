@@ -23,7 +23,6 @@ RSpec.describe Skill, type: :model do
       end
       it "参考動画URLが空でも登録できる" do
         @skill.skill_url = ""
-        # binding.pry
         expect(@skill).to be_valid
       end
 

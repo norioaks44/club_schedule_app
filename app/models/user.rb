@@ -7,8 +7,8 @@ class User < ApplicationRecord
 extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :grade
   belongs_to :position
-  has_many :events
-  has_many :reviews
+  has_many :events, foreign_key: :user_id
+  has_many :reviews, foreign_key: :user_id
 
   has_many :sns_credentials
 

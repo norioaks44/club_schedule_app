@@ -4,8 +4,7 @@ class Event < ApplicationRecord
   belongs_to :meeting_time
 
   belongs_to :user
-  
-  has_one :review
+  has_one :review, dependent: :destroy
 
   with_options presence: true do
     validates :title_id

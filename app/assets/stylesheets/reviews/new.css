@@ -54,6 +54,7 @@
   min-width: 370px;
   margin-top: 10px;
   padding: 10px;
+  resize: none;
 }
 
 #review_match_url {
@@ -61,4 +62,5 @@
   height: 24px;
   padding: 10px;
   margin-top: 10px;
+  resize: none;
 }

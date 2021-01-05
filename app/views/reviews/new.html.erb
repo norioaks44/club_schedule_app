@@ -46,7 +46,7 @@
           <div class="side-form">
           </div>
           <div class="main-form">
-            <%= f.text_field :opponent_team, class:"input-form" %>
+            <%= f.text_field :opponent_team, placeholder:"高校名", class:"input-form" %>
           </div>
         </div>
       </div>
@@ -57,7 +57,7 @@
           <%= f.label :comment, "レビュー本文"%>
         </div>
         <div class="form">
-          <%= f.text_area :comment, class:"input-form", placeholder:"総括", rows:'8'%>
+          <%= f.text_area :comment, class:"input-form", placeholder:"試合コメントなど(1000字以内)", rows:'8'%>
         </div>
       </div>
 
