@@ -90,13 +90,16 @@
   margin-bottom: 10px;
 }
 
-.day-info {
+#event_info {
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  width: 100%;
+  width: 400px;
   padding: 5px;
+  margin-top: ;
   box-sizing: border-box;
+  resize: none;
+  align-content: right;
 }
 
 .link-btn-contents {

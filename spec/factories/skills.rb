@@ -1,15 +1,11 @@
 FactoryBot.define do
   factory :skill do
-    drill_name       { Faker::Lorem.characters(number: 40) }
+    drill_name       { Faker::Lorem.characters(number: 20) }
     info             { Faker::Lorem.sentence }
-    category_id   { Faker::Number.within(range: 2..4) }
-    genre_id       { Faker::Number.within(range: 2..11) }
-
+    category_id   { Faker::Number.within(range: 1..4) }
+    genre_id       { Faker::Number.within(range: 1..11) }
+    skill_url       { Faker::Internet.url }
     association :user
-
-    # after(:build) do |skill|
-    #   skill.image.attach(io: File.open('public/images/test_image.png'), filename: 'test_image.png')
-    # end
 
   end
 end

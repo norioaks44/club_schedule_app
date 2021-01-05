@@ -56,7 +56,7 @@ class SkillsController < ApplicationController
   
   private
   def skill_params
-    params.require(:skill).permit(:drill_name, :info, :category_id, :genre_id, :video, :image).merge(user_id: current_user.id)
+    params.require(:skill).permit(:drill_name, :info, :category_id, :genre_id, :video, :image, :skill_url).merge(user_id: current_user.id)
   end
 
   def searching_skills

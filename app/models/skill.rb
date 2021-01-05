@@ -10,21 +10,16 @@ class Skill < ApplicationRecord
   with_options presence: true do
     validates :drill_name, length: { maximum: 20 }
     validates :info, length: { maximum: 1000 }
-    validates :category_id, numericality: { other_than: 1 } 
-    validates :genre_id, numericality: { other_than: 1 } 
+    validates :category_id
+    validates :genre_id
   end
   
-  validates :image, file_content_type: { allow: [
-    'image/jpeg', 
-    'image/jpg', 
-    'image/png', 
-    'image/bmp', 
-    'image/gif'
-    ]}
+  validates :image, file_content_type: { allow: ['image/jpeg', 'image/jpg', 'image/png', 'image/bmp', 'image/gif']}
     
-  validates :video, file_content_type: {allow: [
-    'video/mp4',
-    'video/mov',
-    'video/quicktime']}
+  validates :video, file_content_type: {allow: ['video/mp4', 'video/mov', 'video/quicktime']}
+
+  URL_REGEX =  /\A#{URI::regexp(%w(http https))}\z/.freeze
+  validates :skill_url, format: { with: URL_REGEX, message: "enter the URL", allow_blank: true }
+
 
 end

@@ -20,7 +20,7 @@
         </div>
       </div>
 
-        <% if @event.meeting_time_id != 2 %>
+        <% if @event.meeting_time_id != 1 %>
 
           <div class="event-info-box">
             <div class="event-left-box">
@@ -55,7 +55,7 @@
 
     <% if user_signed_in? %>
       <%# 試合の場合はレビュー作成へ %>
-        <% if ( @event.title_id == 4 ) || ( @event.title_id == 5 )%>
+        <% if ( @event.title_id == 3 ) || ( @event.title_id == 4 )%>
           <%= link_to '試合レビュー', new_event_review_path(@event.id), class:"match-review-btn" %>
         <% end %>
       <%# 試合の場合はレビュー作成へ %>
