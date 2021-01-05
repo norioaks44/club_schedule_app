@@ -54,7 +54,7 @@
 
       <div class="form-box">
         <div class="form-title">
-          <%= f.label :comment, "レビュー本文"%>
+          <%= f.label :comment, "レビュー本文", maxlength:"1000" %>
         </div>
         <div class="form">
           <%= f.text_area :comment, class:"input-form", placeholder:"試合コメントなど(1000字以内)", rows:'8'%>

@@ -7,7 +7,7 @@ class Review < ApplicationRecord
   with_options presence: true do
     validates :match_genre_id
     validates :opponent_team
-    validates :comment
+    validates :comment, length: { maximum: 1000 }
     validates :match_date
   end
 
