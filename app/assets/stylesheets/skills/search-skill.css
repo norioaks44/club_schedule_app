@@ -1,4 +1,10 @@
-.reviews-search-body {
+.search-form {
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+}
+
+.skills-search-main {  
   background-color: #f7f7f7;
   padding: 20px;
   height: 1000px;
@@ -10,22 +16,12 @@
   flex-direction: column;
 }
 
-.review-search-title {
-  font-size: 20px;
-  text-align: center;
-  margin: 10px;
-}
-
-.review-search-main {
-  padding-left: 10px;
+.skills-search-body {
   height: 80%;
+  padding-left: 20px;
 }
 
-.reviews-search-result {
+.skills-search-result {
   list-style: none;
   margin-top: 10px;
-}
-
-.search-end {
-  text-align: center;
 }

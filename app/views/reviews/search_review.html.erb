@@ -2,16 +2,19 @@
 
 <div class="review-index">
 
-  <div class="reviews-search-main">
-    
+  <div class="reviews-search-body">
+    <div class="review-search-title">
+      検索結果
+    </div>
+    <div class="review-search-main">
       <% if @results.length != 0 %>
         <% @results.each do |review| %>
-          <li>
+          <li class="reviews-search-result">
             <% if review %>
               <%= link_to review_path(review.id) do %>
-                <span class="review-search-item">
-                <%= review.match_date%>
-                <%= review.match_genre.name %> <%= review.opponent_team %></span>
+                <span><%= review.match_date%></span>
+                <span><%= review.match_genre.name %></span>
+                <span><%= review.opponent_team%></span>
               <% end %>
             <% end %>
           </li>
@@ -19,8 +22,10 @@
       <% else %>
       該当する項目がありません
       <% end %>
-      <%= link_to "もどる", reviews_path %>
-
+    </div>
+    <div class="search-end">
+      <%= link_to "もどる", reviews_path, class:'back-btn' %>
+    </div>
   </div>
 </div>
 

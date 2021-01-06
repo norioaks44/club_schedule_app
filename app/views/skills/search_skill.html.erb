@@ -2,11 +2,14 @@
 
 <div class="skills-body">
 
-  <div class="skills-main">
-    
+  <div class="skills-search-main">
+    <div class="review-search-title">
+      検索結果
+    </div>
+    <div class='skills-search-body'>
       <% if @results.length != 0 %>
         <% @results.each do |skill| %>
-          <li>
+          <li class='skills-search-result'>
             <% if skill %>
               <%= link_to skill_path(skill.id) do %>
                 <span class="skill-item"><%= skill.drill_name %></span>
@@ -15,10 +18,12 @@
           </li>
         <% end %>
       <% else %>
-      該当する項目がありません
-      <%= link_to "もどる", skills_path %>
+        該当する項目がありません
       <% end %>
-
+    </div>
+    <div class="search-end">
+      <%= link_to "もどる", skills_path %>
+    </div>
   </div>
 </div>
 
