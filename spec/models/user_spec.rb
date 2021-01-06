@@ -6,13 +6,12 @@ RSpec.describe User, type: :model do
   end
 
   describe 'ユーザー新規登録' do
-
     context '新規登録が可能なとき' do
       it 'name, email, password, password_confirmation, grade_id, position_idがあるとき登録できる' do
         expect(@user).to be_valid
       end
     end
-    
+
     context '新規登録が不可能なとき' do
       it 'nicknameが空だと登録できない' do
         @user.name = ''
@@ -81,8 +80,6 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include("Position can't be blank")
       end
-
     end
-
   end
 end

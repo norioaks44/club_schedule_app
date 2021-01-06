@@ -13,7 +13,6 @@ class Review < ApplicationRecord
 
   validates :event_id, uniqueness: true
 
-  URL_REGEX =  /\A#{URI::regexp(%w(http https))}\z/.freeze
-  validates :match_url, format: { with: URL_REGEX, message: "enter the URL", allow_blank: true }
-
+  URL_REGEX = /\A#{URI::DEFAULT_PARSER.make_regexp(%w[http https])}\z/.freeze
+  validates :match_url, format: { with: URL_REGEX, message: 'enter the URL', allow_blank: true }
 end

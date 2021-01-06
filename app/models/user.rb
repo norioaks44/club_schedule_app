@@ -2,9 +2,9 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-  :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:google_oauth2]
+         :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:google_oauth2]
 
-extend ActiveHash::Associations::ActiveRecordExtensions
+  extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :grade
   belongs_to :position
   has_many :events, foreign_key: :user_id
@@ -25,8 +25,8 @@ extend ActiveHash::Associations::ActiveRecordExtensions
     sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create
 
     user = User.where(email: auth.info.email).first_or_initialize(
-        name: auth.info.name,
-        email: auth.info.email
+      name: auth.info.name,
+      email: auth.info.email
     )
     if user.persisted?
       sns.user = user
@@ -34,5 +34,4 @@ extend ActiveHash::Associations::ActiveRecordExtensions
     end
     { user: user, sns: sns }
   end
-
 end

@@ -21,11 +21,11 @@ class EventsController < ApplicationController
   def show
     load_event
   end
-  
+
   def edit
     load_event
   end
-  
+
   def update
     load_event
     if @event.update(event_params)
@@ -34,7 +34,7 @@ class EventsController < ApplicationController
       render :edit
     end
   end
-  
+
   def destroy
     load_event
     if @event.destroy
@@ -47,11 +47,10 @@ class EventsController < ApplicationController
   private
 
   def event_params
-      params.require(:event).permit(:title_id, :start_time, :meeting_time_id, :info).merge(user_id: current_user.id)
+    params.require(:event).permit(:title_id, :start_time, :meeting_time_id, :info).merge(user_id: current_user.id)
   end
 
   def load_event
     @event = Event.find(params[:id])
   end
-
 end

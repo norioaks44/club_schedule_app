@@ -11,7 +11,6 @@ class Event < ApplicationRecord
     validates :start_time, uniqueness: true
     validates :meeting_time_id
   end
-  
-  validates :info, length: { maximum: 1000 }
 
+  validates :info, length: { maximum: 1000 }
 end
