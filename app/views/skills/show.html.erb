@@ -48,6 +48,15 @@
         <span class="explain-main"><%= @skill.info %></span>
       </div>
 
+      <% if @skill.skill_url? %>
+        <div class="skill-explain">
+          <div class="explain-title">
+            参考動画
+          </div>
+          <span class="explain-main">          <%= link_to @skill.skill_url, @skill.skill_url %></span>
+        </div>
+      <% end %>
+
     </div>
 
     <div class="media-viewer">

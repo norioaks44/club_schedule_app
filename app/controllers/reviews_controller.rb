@@ -13,7 +13,7 @@ class ReviewsController < ApplicationController
     @review = Review.new
     @event = Event.find(params[:event_id])
   end
-  
+
   def create
     @review = Review.new(review_params)
     if @review.valid?
@@ -27,11 +27,11 @@ class ReviewsController < ApplicationController
   def show
     load_review
   end
-  
+
   def edit
     load_review
   end
-  
+
   def update
     load_review
     if @review.update(update_params)
@@ -40,7 +40,7 @@ class ReviewsController < ApplicationController
       render :edit
     end
   end
-  
+
   def destroy
     load_review
     if @review.destroy
@@ -51,19 +51,19 @@ class ReviewsController < ApplicationController
   end
 
   def search
-    return nil if params[:keyword] == ""
+    return nil if params[:keyword] == ''
   end
-  
+
   def search_review
     @results = @p.result
   end
 
-
   private
+
   def review_params
     params.require(:review).permit(:match_genre_id, :opponent_team, :comment, :match_url, :match_date).merge(user_id: current_user.id, event_id: params[:event_id])
   end
-  
+
   def update_params
     params.require(:review).permit(:match_genre_id, :opponent_team, :comment, :match_url, :match_date)
   end
@@ -74,21 +74,18 @@ class ReviewsController < ApplicationController
 
   def no_match_block
     @event = Event.find(params[:event_id])
-    if @event.title_id == 4 
-    elsif @event.title_id == 5
+    if @event.title_id == 3
+    elsif @event.title_id == 4
     else
       redirect_to root_path
     end
   end
 
   def review_double_block
-    if @event.review != nil
-      redirect_to reviews_path
-    end
+    redirect_to reviews_path unless @event.review.nil?
   end
 
   def searching_reviews
     @p = Review.ransack(params[:q])
   end
-
 end

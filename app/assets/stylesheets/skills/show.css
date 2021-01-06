@@ -3,6 +3,7 @@
   height: calc( 100% - 160px );
   min-height: 700px;
   width: 100%;
+  min-width: 850px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -14,10 +15,11 @@
   padding: 20px;
   height: 90%;
   width: 80%;
-  min-width: 550px;
+  min-width: 800px;
   border: 3px groove ;
   border-radius: 4px;
   display: flex;
+  align-items: center;
 }
 
 
@@ -47,6 +49,8 @@
 .info-right-box {
   width: calc( 90% - 80px );
   text-align: center;
+  word-wrap: break-word;
+  word-break: keep-all;
 }
 
 .skill-explain {

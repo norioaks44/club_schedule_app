@@ -45,7 +45,7 @@
 #review_opponent_team {
   height: 26px;
   width: 240px;
-  padding-right: 5px;
+  padding-left: 5px;
 }
 
 
@@ -54,6 +54,7 @@
   min-width: 370px;
   margin-top: 10px;
   padding: 10px;
+  resize: none;
 }
 
 #review_match_url {
@@ -61,4 +62,5 @@
   height: 24px;
   padding: 10px;
   margin-top: 10px;
+  resize: none;
 }

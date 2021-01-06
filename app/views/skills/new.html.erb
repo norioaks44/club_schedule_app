@@ -54,9 +54,8 @@
           <%= form.label :info, "解説"%>
         </div>
         <div class="form">
-          <div class="side-form"></div>
           <div class="skill-info-form">
-              <%= form.text_area :info, class:"input-form", rows: "7", maxlength:"1000" %>
+            <%= form.text_area :info, class:"input-form", rows: "7", maxlength:"1000" %>
           </div>
         </div>
       </div>
@@ -70,7 +69,6 @@
         </div>
       </div>
 
-
       <div class="form-box">
         <div class="form-title">
           <%= form.label :video, "動画 (mp4, mov)"%>
@@ -80,6 +78,14 @@
         </div>
       </div>
 
+      <div class="form-box">
+        <div class="form-title">
+          <%= form.label :skill_url, "参考動画URL(You tubeなど)"%>
+        </div>
+        <div class='media-form'>
+            <%= form.text_field :skill_url, class:"input-form", placeholder:" https://www.youtube.com/watch?v=○○○○○○" %>
+        </div>
+      </div>
     
       <div class="submit-post">
         <%= form.submit '登録' ,class:"submit-btn" %>

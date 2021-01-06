@@ -23,11 +23,11 @@ class SkillsController < ApplicationController
   def show
     @skill = Skill.find(params[:id])
   end
-  
+
   def edit
     @skill = Skill.find(params[:id])
   end
-  
+
   def update
     @skill = Skill.find(params[:id])
     if @skill.update(skill_params)
@@ -36,7 +36,7 @@ class SkillsController < ApplicationController
       render :edit
     end
   end
-  
+
   def destroy
     @skill = Skill.find(params[:id])
     if @skill.destroy
@@ -47,20 +47,20 @@ class SkillsController < ApplicationController
   end
 
   def search
-    return nil if params[:keyword] == ""
+    return nil if params[:keyword] == ''
   end
-  
+
   def search_skill
     @results = @p.result
   end
-  
+
   private
+
   def skill_params
-    params.require(:skill).permit(:drill_name, :info, :category_id, :genre_id, :video, :image).merge(user_id: current_user.id)
+    params.require(:skill).permit(:drill_name, :info, :category_id, :genre_id, :video, :image, :skill_url).merge(user_id: current_user.id)
   end
 
   def searching_skills
     @p = Skill.ransack(params[:q])
   end
-
 end
