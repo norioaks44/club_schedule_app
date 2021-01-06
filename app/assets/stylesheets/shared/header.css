@@ -39,7 +39,7 @@
 .skills-header {
   background-color: #0011ffc4;
   height: 160px;
-  width: 100%;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
