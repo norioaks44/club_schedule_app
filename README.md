@@ -18,9 +18,7 @@
       パスワード:       test#123
 
   ## 開発環境
-    Ruby / Ruby on Rails / MySQL / GitHub / Heroku / Visual Studio Code 
-  ### ruby '2.6.5'
-  ### rails '6.0.0'
+    Ruby '2.6.5' / Ruby on Rails '6.0.0' / MySQL / GitHub / Heroku / Visual Studio Code 
 
 # テーブル設計
 
