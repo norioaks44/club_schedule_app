@@ -7,7 +7,7 @@
     スポーツチーム対象のカレンダーと記事投稿アプリケーションを作成しました。
 
   ## URL
-    http://ec2-54-199-115-86.ap-northeast-1.compute.amazonaws.com/
+    <http://ec2-54-199-115-86.ap-northeast-1.compute.amazonaws.com/>
 
 ## テストアカウント
   ### 通常アカウント
@@ -18,11 +18,26 @@
       パスワード:       test#123
 
   ## 開発環境
-    Ruby '2.6.5' / Ruby on Rails '6.0.0' / MySQL / GitHub / Heroku / Visual Studio Code 
+    Ruby '2.6.5' / Ruby on Rails '6.0.0' / MySQL / GitHub / Heroku / Visual Studio Code
 
-# テーブル設計
+## 利用方法
 
-## users テーブル
+
+## 目指した課題解決
+
+
+## 洗い出した要件
+
+
+## 実装した機能
+
+
+## 実装予定の機能
+
+
+## テーブル設計
+
+### users テーブル
 
 | Column              | Type    | Options     |
 | ------------------- | ------- | ----------- |
@@ -32,12 +47,12 @@
 | grade_id            | integer | null: false |
 | position_id         | integer | null: false |
 
-### Association
+#### Association
 - has_many :events
 - has_many :skills
 - has_many :reviews
 
-## events テーブル
+### events テーブル
 
 | Column          | Type       | Options                        |
 | --------------- | ---------- | ------------------------------ |
@@ -47,12 +62,12 @@
 | start_time      | date       | null: false                    |
 | meeting_time_id | integer    | null: false                    |
 
-### Association
+#### Association
 
 - belongs_to :user
 - has_one :review
 
-## skills テーブル
+### skills テーブル
 
 | Column          | Type       | Options                        |
 | --------------- | ---------- | ------------------------------ |
@@ -63,10 +78,10 @@
 | genre_id        | integer    | null:false                     |
 | skill_url       | string     |                                |
 
-### Association
+#### Association
 - belongs_to :user
 
-## reviews テーブル
+### reviews テーブル
 
 | Column          | Type       | Options                        |
 | --------------- | ---------- | ------------------------------ |
@@ -75,6 +90,8 @@
 | comment         | text       | null:false                     |
 | match_url       | text       |                                |
 
-### Association
+#### Association
 - belongs_to :event
 - belongs_to :user
+
+## ローカルでの動作方法
