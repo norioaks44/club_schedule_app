@@ -41,10 +41,17 @@
 
 ## 実装した機能
   - カレンダー機能
+  https://gyazo.com/048d72617b32c862853585c5a2684ff6
+
   - 画像・動画投稿機能
+    ##### **https://gyazo.com/197df70bb38965c0ce123b9e000cb962**
+
   - 試合レビュー投稿機能
+  https://gyazo.com/3c6c85e3ca82a614f84d850bdc6c092e
+
   - AWS EC2・S3での運用
   - 記事検索機能
+  https://gyazo.com/6d9e6be9c32c8bf429f91c6d70972994
   - SNS認証
 
 
