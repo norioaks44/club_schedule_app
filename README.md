@@ -112,10 +112,10 @@
 - belongs_to :user
 
 ## ローカルでの動作方法
-$ git clone https://github.com/norioaks44/club_shcedule_app.git
-$ cd club_shcedule_app
-$ bundle install
-$ rails db:create
-$ rails db:migrate
-$ rails s
-👉 http://localhost:3000
+    $ git clone https://github.com/norioaks44/club_shcedule_app.git
+    $ cd club_shcedule_app
+    $ bundle install
+    $ rails db:create
+    $ rails db:migrate
+    $ rails s
+    http://localhost:3000
