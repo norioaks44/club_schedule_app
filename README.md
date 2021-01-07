@@ -1,12 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+  ## Name
+  Club Schedular
 
-Things you may want to cover:
-
+  ## URL
+  http://ec2-54-199-115-86.ap-northeast-1.compute.amazonaws.com/
 * Ruby version
-
+ruby '2.6.5'
+rails '6.0.0'
 * System dependencies
 
 * Configuration
@@ -64,6 +65,7 @@ Things you may want to cover:
 | info            | string     | null:false                     |
 | category_id     | integer    | null:false                     |
 | genre_id        | integer    | null:false                     |
+| skill_url       | string     |                                |
 
 ### Association
 - belongs_to :user
