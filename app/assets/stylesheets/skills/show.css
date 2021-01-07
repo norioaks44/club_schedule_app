@@ -67,6 +67,7 @@
 .explain-main{
   word-wrap: break-word;
   word-break: keep-all;
+  white-space: pre-wrap; 
 }
 
 .media-viewer {
