@@ -9,7 +9,7 @@
   ## URL
     http://ec2-54-199-115-86.ap-northeast-1.compute.amazonaws.com/
 
-  ## テストアカウント
+## テストアカウント
   ### 通常アカウント
       メールアドレス:   test_man@example.com
       パスワード:       test#123
@@ -19,24 +19,8 @@
 
   ## 開発環境
     Ruby / Ruby on Rails / MySQL / GitHub / Heroku / Visual Studio Code 
-  * Ruby version
-    ruby '2.6.5'
-    rails '6.0.0'
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  ### ruby '2.6.5'
+  ### rails '6.0.0'
 
 # テーブル設計
 
