@@ -62,13 +62,13 @@ RSpec.describe User, type: :model do
         @user.password = 'abcdef'
         @user.password_confirmation = 'abcdef'
         @user.valid?
-        expect(@user.errors.full_messages).to include('Password include both letters and numbers')
+        expect(@user.errors.full_messages).to include('Password include both letters and numerical symbols')
       end
       it 'passwordが数字のみでは登録できない' do
         @user.password = '123456'
         @user.password_confirmation = '123456'
         @user.valid?
-        expect(@user.errors.full_messages).to include('Password include both letters and numbers')
+        expect(@user.errors.full_messages).to include('Password include both letters and numerical symbols')
       end
       it '入学期が空だと登録できない' do
         @user.grade_id = ''
