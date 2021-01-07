@@ -7,7 +7,7 @@
     スポーツチーム対象のカレンダーと記事投稿アプリケーションを作成しました。
 
   ## URL
-    [http://59.199.115.86](http://ec2-54-199-115-86.ap-northeast-1.compute.amazonaws.com/)
+    <http://ec2-54-199-115-86.ap-northeast-1.compute.amazonaws.com>
 
 ## テストアカウント
   ### 通常アカウント
