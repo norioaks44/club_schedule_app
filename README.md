@@ -12,11 +12,11 @@
 
 ## テストアカウント
 ### 通常アカウント
-  メールアドレス:test_man@example.com
-  パスワード:test#123
+    メールアドレス:test_man@example.com
+    パスワード:test#123
 ### googleアカウント
-  メールアドレス名: testapp.katou@gmail.com
-  パスワード:test#123
+    メールアドレス名: testapp.katou@gmail.com
+    パスワード:test#123
 
 ## 開発環境
 Ruby '2.6.5' / Ruby on Rails '6.0.0' / MySQL / GitHub / Heroku / Visual Studio Code
