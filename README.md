@@ -119,8 +119,8 @@
 - belongs_to :user
 
 ## ローカルでの動作方法
-    $ git clone https://github.com/norioaks44/club_shcedule_app.git
-    $ cd club_shcedule_app
+    $ git clone https://github.com/norioaks44/club_schedule_app.git
+    $ cd club_schedule_app
     $ bundle install
     $ rails db:create
     $ rails db:migrate
